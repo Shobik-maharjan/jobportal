@@ -140,12 +140,6 @@ function Candidates({ Applicants, isOpen, jobInfo }) {
                               <DropLink
                                 href="#"
                                 class="dropdown-item px-4 py-2"
-                                onClick={() => {
-                                  setAppliedDate(
-                                    Moment(jb.appliedDate).format("MMM Do YYYY")
-                                  );
-                                  openModal(jb.applicant);
-                                }}
                               >
                                 Hire
                               </DropLink>
