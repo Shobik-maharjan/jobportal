@@ -30,32 +30,22 @@ function SeekerJobs() {
     {
       id: 2,
       checked: false,
-      label: "Medical Sector",
+      label: "Health",
     },
     {
       id: 3,
       checked: false,
-      label: "Education",
+      label: "Entertainment",
     },
     {
       id: 4,
       checked: false,
-      label: "Skilled Worker",
+      label: "Real Estate",
     },
     {
       id: 5,
       checked: false,
-      label: "Financial Sector",
-    },
-    {
-      id: 6,
-      checked: false,
-      label: "Entertainment Sector",
-    },
-    {
-      id: 7,
-      checked: false,
-      label: "Marketing Sector",
+      label: "Finance",
     },
   ]);
 
@@ -94,32 +84,23 @@ function SeekerJobs() {
       {
         id: 2,
         checked: false,
-        label: "Medical Sector",
+        label: "Health",
       },
       {
         id: 3,
         checked: false,
-        label: "Education",
+        label: "Entertainment",
       },
+
       {
         id: 4,
         checked: false,
-        label: "Skilled Worker",
+        label: "Real Estate",
       },
       {
         id: 5,
         checked: false,
-        label: "Financial Sector",
-      },
-      {
-        id: 6,
-        checked: false,
-        label: "Entertainment Sector",
-      },
-      {
-        id: 7,
-        checked: false,
-        label: "Marketing Sector",
+        label: "Finance",
       },
     ]);
   };
@@ -139,7 +120,7 @@ function SeekerJobs() {
 
     if (categoryChecked.length > 0) {
       updatedList = updatedList.filter((item) => {
-        return categoryChecked.includes(item.sector.title);
+        return categoryChecked.includes(item.sector);
       });
     }
 

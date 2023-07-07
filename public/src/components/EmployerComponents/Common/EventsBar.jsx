@@ -151,7 +151,7 @@ function EventsBar({
                     <p className="event-name">{event.event.title}</p>
                     <div className="event-participant">
                       {" "}
-                      <AiOutlineUser /> Chirag Simkhada
+                      <AiOutlineUser /> {event.event.company}
                     </div>
                     <div className="event-time">
                       {" "}

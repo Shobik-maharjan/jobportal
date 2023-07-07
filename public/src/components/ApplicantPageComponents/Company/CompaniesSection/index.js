@@ -22,6 +22,8 @@ function Categories({ white }) {
   var [health, setHealth] = useState([]);
   var [isEntReady, setIsEntReady] = useState(false);
   var [ent, setEnt] = useState([]);
+  var [isFinanceReady, setIsFinanceReady] = useState(false);
+  var [finance, setFinance] = useState([]);
   var [isRealReady, setIsRealReady] = useState(false);
   var [real, setReal] = useState([]);
   useEffect(() => {
@@ -62,6 +64,18 @@ function Categories({ white }) {
         setEnt(ent);
         setIsEntReady(true);
         console.log(ent);
+      });
+    axios
+      .get(getSectorCompany, {
+        params: {
+          sector: "Finance",
+        },
+      })
+      .then((result) => {
+        finance = result.data.data.slice(0, 3);
+        setFinance(finance);
+        setIsFinanceReady(true);
+        console.log(finance);
       });
     axios
       .get(getSectorCompany, {
@@ -157,6 +171,40 @@ function Categories({ white }) {
         <HContainer>
           {isEntReady ? (
             ent.map((company) => (
+              <CategoryCard
+                id={uuid()}
+                onClick={(event) =>
+                  (window.location.href = `/applicant/company/${company._id}`)
+                }
+              >
+                <div className="box1" id={uuid()}>
+                  <FcAdvertisment />
+                </div>
+                <div className="box2" id={uuid()}>
+                  <h6>{company.name}</h6>
+                  <p>
+                    {company.region}, {company.country}
+                  </p>
+                </div>
+              </CategoryCard>
+            ))
+          ) : (
+            <div></div>
+          )}
+        </HContainer>
+      </ContentHolder>
+      <ContentHolder>
+        <TitleContainer>
+          <Title style={{ color: "white" }}>
+            Companies Focused in{" "}
+            <ColoredSlogan style={{ color: "whitesmoke" }}>
+              Finance
+            </ColoredSlogan>
+          </Title>
+        </TitleContainer>
+        <HContainer>
+          {isFinanceReady ? (
+            finance.map((company) => (
               <CategoryCard
                 id={uuid()}
                 onClick={(event) =>

@@ -26,6 +26,7 @@ import {
   TextContent,
   Title,
 } from "./Components";
+import { host } from "../../../utils/APIRoutes";
 function JobDescriptionSection({ job, isLoading }) {
   return (
     <SectionWrapper>
@@ -38,7 +39,7 @@ function JobDescriptionSection({ job, isLoading }) {
                 {isLoading ? (
                   <Skeleton variant="circular" height="60px" width="60px" />
                 ) : (
-                  <Logo src={job.company.avatarImage} alt="logo" />
+                  <Logo src={host + "/" + job.company.avatarImage} alt="logo" />
                 )}
               </LogoContainer>
               <TextContent>

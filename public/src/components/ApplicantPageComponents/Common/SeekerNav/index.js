@@ -55,7 +55,11 @@ const SeekerNav = ({ toggle }) => {
       <IconContext.Provider value={{ color: "#01bf71" }}>
         <Nav scrollNav={scrollNav}>
           <NavbarContainer>
-            <NavLogo to="/" onClick={toggleHome} scrollNav={scrollNav}>
+            <NavLogo
+              to="/applicant/home"
+              onClick={toggleHome}
+              scrollNav={scrollNav}
+            >
               Job Hire
             </NavLogo>
             <MobileIcon onClick={toggle}>

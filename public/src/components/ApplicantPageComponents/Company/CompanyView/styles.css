@@ -1,8 +1,13 @@
 .CareerContainer {
-  margin-top: 6rem;
+  margin-top: 0rem;
   margin-left: 6rem;
   min-height: 100vh;
   width: 100%;
+}
+
+.CareerContentHolder {
+  padding-top: 6rem;
+  padding-bottom: 2rem;
 }
 
 .logo-container {
@@ -16,6 +21,9 @@
 
 .CareerHead {
   text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
 }
 .CareerAbout {
   margin-top: 1rem;
@@ -26,12 +34,13 @@
   width: 70%;
   margin: auto;
   text-align: justify;
-  color: black;
+  color: rgb(255, 255, 255);
   margin-top: 3.5rem;
 }
 
 .career-footer {
   text-align: center;
+  color: white;
 }
 
 .box1 {

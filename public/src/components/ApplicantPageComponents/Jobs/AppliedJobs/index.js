@@ -64,8 +64,10 @@ function AppliedJobs() {
                       <FcBrokenLink style={{ fontSize: "1.5rem" }} />
                     </div>
                     <div className="box2">
-                      <h6>Google Inc</h6>
-                      <p>California, USA</p>
+                      <h6>{job.job.company.name}</h6>
+                      <p>
+                        {job.job.company.region}, {job.job.company.country}
+                      </p>
                     </div>
                   </CompanyInfoHoler>
                   <JobTitleHolder>
@@ -80,7 +82,9 @@ function AppliedJobs() {
                       ${job.job.sallary}
                       <Muted>/month</Muted>
                     </Sallary>
-                    <ApplyButton>View Status</ApplyButton>
+                    <ApplyButton>
+                      View Status{job.job.setAppliedJobs}
+                    </ApplyButton>
                   </JobFooter>
                 </div>
               </JobCard>

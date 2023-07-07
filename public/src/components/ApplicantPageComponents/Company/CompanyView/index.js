@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import LoadingImage from "../../../../images/loading.gif";
-import { getCompanyDetails } from "../../../../utils/APIRoutes";
+import { getCompanyDetails, host } from "../../../../utils/APIRoutes";
 import { JobTitle } from "../../../EmployerComponents/Dashboard/Components";
 import { JobType } from "../../../ProfileComponents/InformationComponent/Component";
 import {
@@ -45,7 +45,7 @@ function Careers() {
           <>
             <div className="CareerHead">
               <div className="logo-container mb-2">
-                <img src={company.avatarImage} alt="ss" />
+                <img src={host + "/" + company.avatarImage} alt="ss" />
               </div>
               <h3>{company.name}</h3>
               <h6>
@@ -82,7 +82,10 @@ function Careers() {
                         }}
                       >
                         <div className="box1 ">
-                          <img src={company.avatarImage} alt="ss" />
+                          <img
+                            src={host + "/" + company.avatarImage}
+                            alt="ss"
+                          />
 
                           {/* <FcBrokenLink style={{ fontSize: "1.5rem" }} /> */}
                         </div>
@@ -116,7 +119,7 @@ function Careers() {
             </div>
             <div className="career-footer">
               <div className="logo-container mb-2">
-                <img src={company.avatarImage} alt="ss" />
+                <img src={host + "/" + company.avatarImage} alt="ss" />
               </div>
               <p className="text-capitalize">{company.sector} based company</p>
               <p> &copy; {company.name}, 2022</p>
