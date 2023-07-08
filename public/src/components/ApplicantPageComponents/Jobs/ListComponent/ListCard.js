@@ -1,4 +1,4 @@
-import { FcBrokenLink } from "react-icons/fc";
+import { host } from "../../../../utils/APIRoutes";
 import { Link } from "react-router-dom";
 import {
   ApplyButton,
@@ -23,7 +23,7 @@ function Job(item) {
         <Link to={`/applicant/job/${item._id}`}>
           <CompanyInfoHoler>
             <div className="box1">
-              <FcBrokenLink style={{ fontSize: "1.5rem" }} />
+              <img src={host + "/" + item.company.avatarImage} alt="ss" />
             </div>
             <div className="box2">
               <h6>{item.company.name}</h6>

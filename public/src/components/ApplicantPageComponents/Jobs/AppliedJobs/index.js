@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { FcBrokenLink } from "react-icons/fc";
-import { getAppliedJobs } from "../../../../utils/APIRoutes";
+import { getAppliedJobs, host } from "../../../../utils/APIRoutes";
 import {
   ColoredSlogan,
   Slogan,
@@ -40,7 +39,6 @@ function AppliedJobs() {
       setIsReady(true);
     });
   }, []);
-
   return (
     <div style={{ minHeight: "100vh" }}>
       <ContentHolder>
@@ -49,7 +47,6 @@ function AppliedJobs() {
             <ColoredSlogan>Applied</ColoredSlogan> Jobs
           </Slogan>
         </TitleHolder>
-
         <JobCardsHoler>
           {ready ? (
             appliedJobs.map((job) => (
@@ -61,7 +58,10 @@ function AppliedJobs() {
                 <div style={{ zIndex: 1 }}>
                   <CompanyInfoHoler>
                     <div className="box1">
-                      <FcBrokenLink style={{ fontSize: "1.5rem" }} />
+                      <img
+                        src={host + "/" + job.job.company.avatarImage}
+                        alt="ss"
+                      />
                     </div>
                     <div className="box2">
                       <h6>{job.job.company.name}</h6>
@@ -82,9 +82,7 @@ function AppliedJobs() {
                       ${job.job.sallary}
                       <Muted>/month</Muted>
                     </Sallary>
-                    <ApplyButton>
-                      View Status{job.job.setAppliedJobs}
-                    </ApplyButton>
+                    <ApplyButton>Status = {job.status}</ApplyButton>
                   </JobFooter>
                 </div>
               </JobCard>

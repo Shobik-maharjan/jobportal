@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { FcBrokenLink } from "react-icons/fc";
 import { Link } from "react-router-dom";
-import { getAllJobs } from "../../../../utils/APIRoutes";
+import { getAllJobs, host } from "../../../../utils/APIRoutes";
 import { ColoredSlogan, Slogan } from "../SeekerHero/seekerHeroElements";
 import {
   ApplyButton,
@@ -55,7 +54,10 @@ function SeekerJob() {
                   <Link to={`/applicant/job/${job._id}`}>
                     <CompanyInfoHoler>
                       <div className="box1">
-                        <FcBrokenLink style={{ fontSize: "1.5rem" }} />
+                        <img
+                          src={host + "/" + job.company.avatarImage}
+                          alt="ss"
+                        />
                       </div>
                       <div className="box2">
                         <h6>{job.company.name}</h6>

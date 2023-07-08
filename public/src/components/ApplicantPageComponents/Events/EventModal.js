@@ -22,7 +22,7 @@ export const EventsModal = ({
       {showModal ? (
         <Modal
           show={showModal}
-          onHide={closeModel}
+          onHide={setShowModal}
           id="eventModal"
           style={{ color: "transparent" }}
         >

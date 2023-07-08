@@ -29,11 +29,11 @@ export const JobEditModal = ({
   return (
     <>
       {showModal ? (
-        <Modal show={showModal} onHide={setShowModal} className="modalStyle">
+        <Modal show={showModal} onHide={closeModel} className="modalStyle">
           <form>
             <Modal.Header
               closeButton
-              onClick={setShowModal}
+              onClick={closeModel}
               className="flex-column-reverse align-items-center"
             >
               <div className="ModalHead d-flex justify-content-center align-items-center">
