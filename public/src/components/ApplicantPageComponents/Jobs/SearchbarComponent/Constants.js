@@ -72,7 +72,7 @@ export const dataList = [
     type: "Full Time",
     description:
       "You will be expected to manage and lead a fleet of developers in order to achieve the company goals.",
-    Salary: "20000",
+    salary: "20000",
     category: "Health",
   },
   {

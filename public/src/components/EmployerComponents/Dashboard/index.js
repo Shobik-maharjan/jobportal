@@ -454,7 +454,7 @@ function Dashboard({
     if (
       addJob.title === "" ||
       addJob.about === "" ||
-      addJob.Salary === "" ||
+      addJob.salary === "" ||
       addJob.description === "" ||
       skills.length === 0 ||
       requirements.length === 0 ||
@@ -476,7 +476,7 @@ function Dashboard({
 
     const title = addJob.title;
     const about = addJob.about;
-    const Salary = addJob.Salary;
+    const salary = addJob.salary;
     const description = addJob.description;
     const closeTime = addJob.closeTime;
     const sector = addJob.sector;
@@ -485,7 +485,7 @@ function Dashboard({
       const response = await axios.post(addNewJob, {
         title,
         about,
-        Salary,
+        salary,
         description,
         skills,
         requirements,
@@ -500,7 +500,7 @@ function Dashboard({
         setAddJob({
           title: "",
           about: "",
-          Salary: "",
+          salary: "",
           description: "",
           sector: "",
 
@@ -535,7 +535,7 @@ function Dashboard({
 
     const title = addJob.title;
     const about = addJob.about;
-    const Salary = addJob.Salary;
+    const salary = addJob.salary;
     const description = addJob.description;
     const closeTime = addJob.closeTime;
     const _id = selectedId;
@@ -547,7 +547,7 @@ function Dashboard({
           {
             title,
             about,
-            Salary,
+            salary,
             description,
             skills,
             requirements,
@@ -564,7 +564,7 @@ function Dashboard({
           setAddJob({
             title: "",
             about: "",
-            Salary: "",
+            salary: "",
             description: "",
             sector: "",
 
@@ -697,7 +697,7 @@ function Dashboard({
                           </span>
                           <span style={{ marginRight: "0.3rem" }}>
                             <BiDollar />
-                            {jobDetail.job.Salary}/month
+                            {jobDetail.job.salary}/month
                           </span>
                           <span style={{ marginRight: "0.3rem" }}>
                             <BiUser /> {jobDetail.job.applicants.length}
