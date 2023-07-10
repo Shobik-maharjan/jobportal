@@ -23,7 +23,7 @@ describe("Testing Job schema", () => {
       about: "Test Lorem Epsum",
       sector: "62b6b3d0e5202261d4a118fd",
       skill: ["Test Skill", "Random Skill"],
-      sallary: 50000,
+      salary: 50000,
       responsibilities: ["resp 1", "resp 2", "resp 3"],
       requirements: ["req 1", "req 2", "req 3"],
       company: "62daab592f9a7b7fa33da6f7",
@@ -41,7 +41,7 @@ describe("Testing Job schema", () => {
       { title: "Test Job" },
       {
         title: "Test Job 1",
-        sallary: "30000",
+        salary: "30000",
       }
     );
     expect(status.ok);

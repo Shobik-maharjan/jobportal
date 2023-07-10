@@ -11,7 +11,7 @@ import {
   JobTitleHolder,
   JobType,
   Muted,
-  Sallary,
+  Salary,
 } from "./listElements";
 
 function Job(item) {
@@ -40,10 +40,10 @@ function Job(item) {
             <JobDescription>{item.description}</JobDescription>
           </JobDescriptionBox>
           <JobFooter>
-            <Sallary>
-              Rs.{item.sallary}
+            <Salary>
+              Rs.{item.salary}
               <Muted>/month</Muted>
-            </Sallary>
+            </Salary>
             <ApplyButton>Apply Now</ApplyButton>
           </JobFooter>
         </Link>

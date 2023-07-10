@@ -16,7 +16,7 @@ import {
   Responsibilities,
   Responsibility,
   ResponsibilitySection,
-  Sallary,
+  Salary,
   Section,
   SectionTitle,
   SectionWrapper,
@@ -61,7 +61,7 @@ function JobDescriptionSection({ job, isLoading }) {
                 {isLoading ? (
                   <Skeleton />
                 ) : (
-                  <Sallary>Rs.{job.sallary} + Benefits</Sallary>
+                  <Salary>Rs.{job.salary} + Benefits</Salary>
                 )}
               </TextContent>
             </CompanyInfo>

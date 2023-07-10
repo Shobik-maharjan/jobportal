@@ -6,7 +6,7 @@ import EmailVerified from "./components/Common/Email/EmailVerified";
 // import VideoCall from "./components/Meeting/VideoCall";
 import ChatProvider from "./context/ChatProvider";
 import Auth from "./pages/Auth";
-import ChatPage from "./pages/ChatPage";
+// import ChatPage from "./pages/ChatPage";
 import Code_sent from "./pages/code_sent";
 import Employer from "./pages/Employer";
 import Home from "./pages/index";
@@ -41,7 +41,7 @@ function App() {
 
           <Route exact path="/applicant/*" element={<Seeker />} />
           <Route exact path="/codesent" element={<Code_sent />} />
-          <Route path="/chats" element={<ChatPage />} />
+          {/* <Route path="/chats" element={<ChatPage />} /> */}
         </Routes>
       </ChatProvider>
       <ToastContainer autoClose={500} />

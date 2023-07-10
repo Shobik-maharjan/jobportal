@@ -119,7 +119,7 @@ function Dashboard({
     setAddJob({
       title: "",
       about: "",
-      sallary: "",
+      salary: "",
       description: "",
       sector: "",
 
@@ -153,7 +153,7 @@ function Dashboard({
     setAddJob({
       title: job.title,
       about: job.about,
-      sallary: job.sallary,
+      salary: job.salary,
       description: job.description,
       sector: job.sector,
       closeTime: dt,
@@ -193,7 +193,7 @@ function Dashboard({
   const [addJob, setAddJob] = useState({
     title: "",
     about: "",
-    sallary: "",
+    salary: "",
     description: "",
     sector: "",
 
@@ -454,7 +454,7 @@ function Dashboard({
     if (
       addJob.title === "" ||
       addJob.about === "" ||
-      addJob.sallary === "" ||
+      addJob.Salary === "" ||
       addJob.description === "" ||
       skills.length === 0 ||
       requirements.length === 0 ||
@@ -476,7 +476,7 @@ function Dashboard({
 
     const title = addJob.title;
     const about = addJob.about;
-    const sallary = addJob.sallary;
+    const Salary = addJob.Salary;
     const description = addJob.description;
     const closeTime = addJob.closeTime;
     const sector = addJob.sector;
@@ -485,7 +485,7 @@ function Dashboard({
       const response = await axios.post(addNewJob, {
         title,
         about,
-        sallary,
+        Salary,
         description,
         skills,
         requirements,
@@ -500,7 +500,7 @@ function Dashboard({
         setAddJob({
           title: "",
           about: "",
-          sallary: "",
+          Salary: "",
           description: "",
           sector: "",
 
@@ -535,7 +535,7 @@ function Dashboard({
 
     const title = addJob.title;
     const about = addJob.about;
-    const sallary = addJob.sallary;
+    const Salary = addJob.Salary;
     const description = addJob.description;
     const closeTime = addJob.closeTime;
     const _id = selectedId;
@@ -547,7 +547,7 @@ function Dashboard({
           {
             title,
             about,
-            sallary,
+            Salary,
             description,
             skills,
             requirements,
@@ -564,7 +564,7 @@ function Dashboard({
           setAddJob({
             title: "",
             about: "",
-            sallary: "",
+            Salary: "",
             description: "",
             sector: "",
 
@@ -590,7 +590,7 @@ function Dashboard({
         setAddJob({
           title: "",
           about: "",
-          sallary: "",
+          Salary: "",
           description: "",
           sector: "",
 
@@ -697,7 +697,7 @@ function Dashboard({
                           </span>
                           <span style={{ marginRight: "0.3rem" }}>
                             <BiDollar />
-                            {jobDetail.job.sallary}/month
+                            {jobDetail.job.Salary}/month
                           </span>
                           <span style={{ marginRight: "0.3rem" }}>
                             <BiUser /> {jobDetail.job.applicants.length}
@@ -727,12 +727,12 @@ function Dashboard({
                           >
                             Edit
                           </DropLink>
-                          <DropLink
+                          {/* <DropLink
                             href="#"
                             className="dropdown-item px-4 py-2"
                           >
                             Sharable link
-                          </DropLink>
+                          </DropLink> */}
                           <DropLink
                             href="#"
                             className="dropdown-item px-4 py-2"

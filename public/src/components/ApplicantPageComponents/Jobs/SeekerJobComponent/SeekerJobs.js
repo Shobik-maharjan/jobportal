@@ -128,7 +128,7 @@ function SeekerJobs() {
     const maxPrice = selectedPrice[1] * 1000;
 
     updatedList = updatedList.filter(
-      (item) => item.sallary >= minPrice && item.sallary <= maxPrice
+      (item) => item.salary >= minPrice && item.salary <= maxPrice
     );
 
     if (country !== "") {

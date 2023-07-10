@@ -87,13 +87,13 @@ export const JobModal = ({
                   }}
                 />
                 <TextField
-                  type="number"
+                  type="String"
                   required
                   id="outlined-multiline-flexible1"
-                  label="Sallary"
-                  name="sallary"
+                  label="Salary"
+                  name="salary"
                   style={{ width: "100%", marginBottom: "1rem" }}
-                  value={job.sallary}
+                  value={job.salary}
                   onChange={handleJobInput}
                   InputLabelProps={{
                     style: {

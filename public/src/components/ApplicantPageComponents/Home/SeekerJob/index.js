@@ -17,7 +17,7 @@ import {
   JobTitleHolder,
   JobType,
   Muted,
-  Sallary,
+  Salary,
   TitleHolder,
 } from "./JobElements";
 import "./style.css";
@@ -74,10 +74,10 @@ function SeekerJob() {
                       <JobDescription>{job.description}</JobDescription>
                     </JobDescriptionBox>
                     <JobFooter>
-                      <Sallary>
-                        ${job.sallary}
+                      <Salary>
+                        Rs.{job.salary}
                         <Muted>/month</Muted>
-                      </Sallary>
+                      </Salary>
                       <ApplyButton>Apply Now</ApplyButton>
                     </JobFooter>
                   </Link>

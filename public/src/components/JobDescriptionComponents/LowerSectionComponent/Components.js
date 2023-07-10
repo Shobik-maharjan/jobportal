@@ -56,7 +56,7 @@ export const Address = styled.p`
   font-size: 1.2rem;
   font-family: "Raleway", sans-serif;
 `;
-export const Sallary = styled.p`
+export const Salary = styled.p`
   margin-bottom: 0;
   font-weight: bold;
   font-size: 1.2rem;

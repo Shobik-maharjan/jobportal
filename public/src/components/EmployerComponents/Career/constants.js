@@ -17,7 +17,7 @@ export const company = {
       type: "Full Time",
       description:
         "You will be expected to manage and lead a fleet of developers in order to achieve the company goals.",
-      sallary: "50000",
+      salary: "50000",
       category: "Technology",
     },
     {
@@ -29,7 +29,7 @@ export const company = {
       type: "Part Time",
       description:
         "You will be expected to manage and lead a fleet of developers in order to achieve the company goals.",
-      sallary: "60000",
+      salary: "60000",
       category: "Technology",
     },
     {
@@ -41,7 +41,7 @@ export const company = {
       type: "Full Time",
       description:
         "You will be expected to manage and lead a fleet of developers in order to achieve the company goals.",
-      sallary: "20000",
+      salary: "20000",
       category: "Health",
     },
     {
@@ -53,7 +53,7 @@ export const company = {
       type: "Part Time",
       description:
         "You will be expected to manage and lead a fleet of developers in order to achieve the company goals.",
-      sallary: "50000",
+      salary: "50000",
       category: "Finance",
     },
   ],

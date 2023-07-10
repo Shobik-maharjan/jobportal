@@ -11,7 +11,7 @@ module.exports.addJob = async (req, res, next) => {
     const {
       title,
       about,
-      sallary,
+      salary,
       description,
       skills,
       requirements,
@@ -23,7 +23,7 @@ module.exports.addJob = async (req, res, next) => {
     const job = new Job({
       title: title,
       about: about,
-      sallary: sallary,
+      salary: salary,
       description: description,
       skills: skills,
       requirements: requirements,
@@ -412,7 +412,7 @@ module.exports.editJob = async (req, res, next) => {
     const {
       title,
       about,
-      sallary,
+      salary,
       description,
       skills,
       requirements,
@@ -426,7 +426,7 @@ module.exports.editJob = async (req, res, next) => {
     await job.updateOne({
       title: title,
       about: about,
-      sallary: sallary,
+      salary: salary,
       description: description,
       skills: skills,
       requirements: requirements,

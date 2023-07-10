@@ -20,7 +20,7 @@ import {
   JobFooter,
   JobTitleHolder,
   Muted,
-  Sallary,
+  Salary,
 } from "../../ApplicantPageComponents/Home/SeekerJob/JobElements";
 import { JobType } from "../../ProfileComponents/InformationComponent/Component";
 import { JobTitle } from "../Dashboard/Components";
@@ -275,10 +275,10 @@ function Careers({ isOpen, user, com }) {
                           <JobDescription>{job.description}</JobDescription>
                         </JobDescriptionBox>
                         <JobFooter style={{ zIndex: "10000" }}>
-                          <Sallary>
-                            ${job.sallary}
+                          <Salary>
+                            ${job.salary}
                             <Muted>/month</Muted>
-                          </Sallary>
+                          </Salary>
                           <ApplyButton style={{ backgroundColor: "#242933" }}>
                             Edit
                           </ApplyButton>

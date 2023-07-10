@@ -180,7 +180,7 @@ export const JobFooter = styled.div`
   justify-content: space-between;
 `;
 
-export const Sallary = styled.h5`
+export const Salary = styled.h5`
   font-weight: bold;
   color: whitesmoke;
 `;
