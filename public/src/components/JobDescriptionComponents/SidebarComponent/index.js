@@ -102,6 +102,10 @@ function Sidebar({ job, isLoading }) {
               onClick={handleApply}
             >
               <AiOutlineCheckCircle /> Apply For This Job
+              <div>
+                Open ({Moment(job.openDate).format("MMM Do YYYY")}) <div>-</div>
+                close ({Moment(job.closeDate).format("MMM Do YYYY")} )
+              </div>
             </ApplyButton>
           ) : (
             <div style={{ color: "white" }}>

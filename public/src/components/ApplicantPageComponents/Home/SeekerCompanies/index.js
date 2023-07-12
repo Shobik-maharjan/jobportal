@@ -43,7 +43,12 @@ function Companies() {
       <CardsContainer>
         {ready ? (
           companies.map((company) => (
-            <CategoryCard id={uuid()}>
+            <CategoryCard
+              id={uuid()}
+              onClick={(event) =>
+                (window.location.href = `/applicant/company/${company._id}`)
+              }
+            >
               <div className="box1" id={uuid()}>
                 {/* <FcAdvertisment /> */}
                 <img src={host + "/" + company.avatarImage} alt="ss" />
