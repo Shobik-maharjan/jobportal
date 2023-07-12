@@ -72,34 +72,50 @@ export default function CodeSent() {
     sUser();
   }, []);
 
-  const [values, setValues] = useState({
-    code1: "",
-    code2: "",
-    code3: "",
-    code4: "",
-    code5: "",
-    code6: "",
-  });
+  // const [values, setValues] = useState({
+  //   code1: "",
+  //   code2: "",
+  //   code3: "",
+  //   code4: "",
+  //   code5: "",
+  //   code6: "",
+  // });
 
-  const handleChange = (event) => {
-    setValues({ ...values, [event.target.name]: event.target.value });
+  // const handleChange = (event) => {
+  //   setValues({ ...values, [event.target.name]: event.target.value });
+  // };
+
+  // async function handleSubmit(event) {
+  //   event.preventDefault();
+  //   const code =
+  //     values.code1 +
+  //     values.code2 +
+  //     values.code3 +
+  //     values.code4 +
+  //     values.code5 +
+  //     values.code6;
+
+  const [values, setvalues] = useState(new Array(6).fill(""));
+
+  const handleChange = (element, index) => {
+    if (isNaN(element.value)) return false;
+
+    setvalues([...values.map((d, idx) => (idx === index ? element.value : d))]);
+    //Focus next input
+    if (element.nextSibling) {
+      element.nextSibling.focus();
+    }
   };
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-    const code =
-      values.code1 +
-      values.code2 +
-      values.code3 +
-      values.code4 +
-      values.code5 +
-      values.code6;
+  async function handleSubmit(element) {
+    element.preventDefault();
+    const code = values.join("");
+    // console.log(code);
 
     const { data } = await axios.post(
       `${emailVerify}/${currentUser._id}/${code + currentUser._id}`
     );
     callToast(data.msg, data.status);
-
     console.log(data);
   }
   useEffect(() => {
@@ -139,6 +155,22 @@ export default function CodeSent() {
             onSubmit={(event) => handleSubmit(event)}
           >
             <div className="d-flex mb-2">
+              {values.map((data, index) => {
+                return (
+                  <input
+                    type="text"
+                    className="code"
+                    maxLength="1"
+                    key={index}
+                    value={data}
+                    required
+                    onChange={(e) => handleChange(e.target, index)}
+                    onFocus={(e) => e.target.select()}
+                  />
+                );
+              })}
+            </div>
+            {/* <div className="d-flex mb-2">
               <input
                 type="number"
                 className="code"
@@ -199,7 +231,7 @@ export default function CodeSent() {
                 onChange={(e) => handleChange(e)}
                 required
               />
-            </div>
+            </div> */}
             <small className="info mb-2">
               Didn't recieve the code? Click{" "}
               <a href="#" onClick={reSendVerificationCode}>

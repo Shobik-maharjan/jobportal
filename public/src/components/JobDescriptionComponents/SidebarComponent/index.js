@@ -102,6 +102,10 @@ function Sidebar({ job, isLoading }) {
               onClick={handleApply}
             >
               <AiOutlineCheckCircle /> Apply For This Job
+              <div>
+                Open ({Moment(job.openDate).format("MMM Do YYYY")}) <div>-</div>
+                close ({Moment(job.closeDate).format("MMM Do YYYY")} )
+              </div>
             </ApplyButton>
           ) : (
             <div style={{ color: "white" }}>
@@ -135,7 +139,7 @@ function Sidebar({ job, isLoading }) {
         </SaveButton>
       </ButtonContainer>
 
-      <ChatContainer>
+      {/* <ChatContainer>
         <ChatInput
           name="message"
           rows="6"
@@ -145,7 +149,7 @@ function Sidebar({ job, isLoading }) {
         <MessageButton to="/applicant/home" primary="true" dark="true">
           <MdOutlineMessage /> Send Message
         </MessageButton>
-      </ChatContainer>
+      </ChatContainer> */}
     </SectionWrapper>
   );
 }
