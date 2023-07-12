@@ -34,11 +34,10 @@ const Footer = () => {
           <FooterLinksWrapper>
             <FooterLinkItems>
               <FooterLinkTitle> About Us</FooterLinkTitle>
-              <FooterLink to="/signin">How it Works? </FooterLink>
-              <FooterLink to="/signin">Testimonals </FooterLink>
-              <FooterLink to="/signin"> Careers </FooterLink>
-              <FooterLink to="/signin">Investors </FooterLink>
-              <FooterLink to="/signin">Terms of Service</FooterLink>
+              <p>
+                Job Hire is bridge between the hiring employers and the job
+                seekers{" "}
+              </p>
             </FooterLinkItems>
             <FooterLinkItems>
               <FooterLinkTitle> About Us</FooterLinkTitle>

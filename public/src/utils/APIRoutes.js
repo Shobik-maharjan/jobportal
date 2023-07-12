@@ -15,6 +15,7 @@ export const checkAlreadyApplied = `${host}/api/auth/applyJob`;
 export const emailVerify = `${host}/api/auth/verify`;
 export const sendVerification = `${host}/api/auth/sendVerification`;
 export const reSendVerification = `${host}/api/auth/reSendVerification`;
+// export const sendpasswordlink = `${host}/api/auth/sendpasswordlink`;
 
 export const addNewJob = `${host}/api/job/addJob`;
 export const getCompanyJobs = `${host}/api/job/getCompanyJobs`;

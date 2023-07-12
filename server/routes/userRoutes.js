@@ -9,6 +9,7 @@ const {
   sendVerificationEmail,
   resendVerification,
   applyJob,
+  // sendpasswordlink,
   allUsers,
   addEvent,
   markEventCompleted,
@@ -36,6 +37,7 @@ router.get("/user/codesent/", codeSent);
 router.post("/sendVerification/", sendVerificationEmail);
 router.post("/reSendVerification/", resendVerification);
 router.get("/applyJob/", applyJob);
+// router.post("/sendpasswordlink/", sendpasswordlink);
 
 router.route("/getAllUsers").get(protect, allUsers);
 router.route("/getAllUsersApp").get(protect, allUsersApp);

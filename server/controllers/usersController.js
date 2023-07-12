@@ -356,6 +356,59 @@ module.exports.codeSent = (req, res) => {
   res.sendFile(path.join(__dirname, "./../views/code_sent.html"));
 };
 
+//Forget Password
+// module.exports.sendpasswordlink = async (req, res) => {
+//   console.log(req.body);
+
+//   const { email } = req.body;
+//   if (!email) {
+//     res.status(401).json({ status: 401, message: "enter your Email" });
+//   }
+//   //email config
+//   const transporter = nodemailer.createTransport({
+//     service: "gmail",
+//     auth: {
+//       user: process.env.AUTH_EMAIL,
+//       pass: process.env.AUTH_PASSWORD,
+//     },
+//   });
+
+//   try {
+//     const userfind = await User.findOne({ email: email });
+
+//     //token generate for reset password
+//     const token = jwt.sign({ _id: userfind._id }, generateToken, {
+//       expiresIn: "120s",
+//     });
+//     const setusertoken = await User.findByIdAndUpadate(
+//       { _id: userfind._id },
+//       { verifytoken: token },
+//       { new: true }
+//     );
+
+//     if (setusertoken) {
+//       const mailOption = {
+//         from: process.env.AUTH_EMAIL,
+//         to: email,
+//         subject: "Sending Email for password reset",
+//         text: `This link valid for 2 minutes http://localhost:3000/forgetPassword/:id/:token/${userfind.id}/${setusertoken.verifytoken}`,
+//       };
+
+//       transporter.sendMail(mailOption,(error,info)=>{
+//         if(error){
+//           console.log("error",error);
+//           res.status(401).json({status:401,message:"email not send"})
+//         }else{
+//           console.log("Email sent",info.response)
+//           res.status(201).json({status:201,message:"Email send sucessfully"})
+//         }
+//       })
+//     }
+//   } catch (error) {
+//     res.status(401).json({status:401,message:"Invalid user"})
+//   }
+// };
+
 module.exports.register = async (req, res, next) => {
   try {
     const {

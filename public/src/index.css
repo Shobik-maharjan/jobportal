@@ -38,7 +38,7 @@
   background-attachment: fixed;
   /* background-image: url("images/back1.jpg"); */
   /* background-image: url("images/backup.jpg"); */
-  background-color: #866a6a;
+  background-color: rgba(72, 176, 207, 0.788);
   /* background-image: linear-gradient(-120deg, #021b79, #0575e6, #205e9b); */
 }
 
@@ -47,7 +47,7 @@
 }
 
 .MuiCheckbox-root {
-  color: white !important;
+  color: black !important;
 }
 
 .sc-eTgnfb .jGQbXH option {

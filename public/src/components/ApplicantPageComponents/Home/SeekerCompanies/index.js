@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSpring } from "react-spring";
 import { v4 as uuid } from "uuid";
-import { getAllCompanies } from "../../../../utils/APIRoutes";
+import { getAllCompanies, host } from "../../../../utils/APIRoutes";
 import {
   ColoredSlogan,
   Slogan,
@@ -45,7 +45,8 @@ function Companies() {
           companies.map((company) => (
             <CategoryCard id={uuid()}>
               <div className="box1" id={uuid()}>
-                <FcAdvertisment />
+                {/* <FcAdvertisment /> */}
+                <img src={host + "/" + company.avatarImage} alt="ss" />
               </div>
               <div className="box2" id={uuid()}>
                 <h6>{company.name}</h6>

@@ -696,7 +696,7 @@ function Dashboard({
                             {jobDetail.job.skills[0]}, {jobDetail.job.skills[1]}
                           </span>
                           <span style={{ marginRight: "0.3rem" }}>
-                            <BiDollar />
+                            Rs.
                             {jobDetail.job.salary}/month
                           </span>
                           <span style={{ marginRight: "0.3rem" }}>

@@ -22,6 +22,7 @@ const ChatProvider = ({ children }) => {
       if (
         location.pathname == "/auth/login" ||
         location.pathname == "/auth/register" ||
+        // location.pathname == "/auth/reset" ||
         location.pathname == "/"
       ) {
         redirect = false;
@@ -64,6 +65,7 @@ const ChatProvider = ({ children }) => {
         if (
           location.pathname == "/auth/login" ||
           location.pathname == "/auth/register" ||
+          // location.pathname == "/auth/reset" ||
           location.pathname == "/codesent"
         ) {
           redirect = false;

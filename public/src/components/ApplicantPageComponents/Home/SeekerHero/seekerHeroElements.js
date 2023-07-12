@@ -68,7 +68,7 @@ export const Slogan = styled.h1`
   }
 `;
 export const ColoredSlogan = styled.span`
-  color: #423edd;
+  color: #1e2138;
 `;
 
 export const SloganSubtext = styled.h6`

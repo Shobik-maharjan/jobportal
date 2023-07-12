@@ -1,10 +1,10 @@
 import React from "react";
-// import Video from "../../../../videos/background.mp4";
+import Video from "../../../../videos/video1.mp4";
 import {
-  ColoredSlogan,
   ContentHolder,
   FormContainer,
-  // HeroBg,
+  HeroBg,
+  VideoBg,
   HeroContainer,
   JobSearch,
   // LocationFilter,
@@ -13,22 +13,19 @@ import {
   Slogan,
   SloganSubtext,
   TextContent,
-  VideoBg,
 } from "./seekerHeroElements";
 import "./style.css";
 
 function SeekerHero() {
   return (
     <HeroContainer>
-      {/* <HeroBg>
+      <HeroBg>
         <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
-      </HeroBg> */}
+      </HeroBg>
       {/* <ParticleBackground /> */}
       <ContentHolder>
         <TextContent>
-          <Slogan>
-            Get The <ColoredSlogan>Right Job</ColoredSlogan> {"\n"} You Deserve
-          </Slogan>
+          <Slogan>Get The Right Job {"\n"} You Deserve</Slogan>
           <SloganSubtext style={{ color: "white" }}>
             100,000 jobs listed here! Your dream Job is Waiting
           </SloganSubtext>

@@ -135,7 +135,7 @@ function Sidebar({ job, isLoading }) {
         </SaveButton>
       </ButtonContainer>
 
-      <ChatContainer>
+      {/* <ChatContainer>
         <ChatInput
           name="message"
           rows="6"
@@ -145,7 +145,7 @@ function Sidebar({ job, isLoading }) {
         <MessageButton to="/applicant/home" primary="true" dark="true">
           <MdOutlineMessage /> Send Message
         </MessageButton>
-      </ChatContainer>
+      </ChatContainer> */}
     </SectionWrapper>
   );
 }

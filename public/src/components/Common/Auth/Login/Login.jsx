@@ -6,8 +6,10 @@ import styled from "styled-components";
 import Cookies from "universal-cookie";
 import { useAuth } from "../../../../auth/auth";
 import { ChatState } from "../../../../context/ChatProvider";
-import background from "../../../../images/background.png";
+import background from "../../../../images/lightBlue.jpg";
 import { loginRoute } from "../../../../utils/APIRoutes";
+import { repeat } from "lodash";
+
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -99,7 +101,14 @@ export const Login = () => {
       <FormContainer
         style={{
           background: `url(${background})`,
-        }}
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: "100vh", // Set the height to occupy the full viewport height
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }
+      }
       >
         <form onSubmit={(event) => handleSubmit(event)}>
           <div className="brand">
@@ -126,6 +135,12 @@ export const Login = () => {
               Register
             </Link>{" "}
           </span>
+          {/* <span>
+            Forget Password{" "}
+            <Link to="/auth/reset" style={{ color: "orange" }}>
+              Click Here
+            </Link>{" "}
+          </span> */}
         </form>
       </FormContainer>
     </>
@@ -183,7 +198,7 @@ const FormContainer = styled.div`
       }
     }
     button {
-      background-color: #460ce3;
+      background-color: orange;
 
       color: white;
       padding: 1rem 2rem;

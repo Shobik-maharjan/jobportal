@@ -299,7 +299,7 @@ function Careers({ isOpen, user, com }) {
                 <p style={{ color: "white" }} className="text-capitalize">
                   {company.sector} based company
                 </p>
-                <p style={{ color: "white" }}> &copy; {company.name}, 2022</p>
+                <p style={{ color: "white" }}> &copy; {company.name}, 2023</p>
               </div>
             </>
           )}

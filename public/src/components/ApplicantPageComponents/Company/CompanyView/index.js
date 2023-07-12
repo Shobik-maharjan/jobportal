@@ -122,7 +122,7 @@ function Careers() {
                 <img src={host + "/" + company.avatarImage} alt="ss" />
               </div>
               <p className="text-capitalize">{company.sector} based company</p>
-              <p> &copy; {company.name}, 2022</p>
+              <p> &copy; {company.name}, 2023</p>
             </div>
           </>
         )}

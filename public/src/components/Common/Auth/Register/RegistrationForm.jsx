@@ -5,7 +5,7 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { toast } from "react-toastify";
-import background from "../../../../images/background.png";
+import background from "../../../../images/lightBlue.jpg";
 import { registerRoute } from "../../../../utils/APIRoutes";
 import { renderText } from "../DisplayComponent";
 import AdditionlInfo from "./FormSteps/AdditionalInformation";
@@ -436,6 +436,12 @@ class RegistrationForm extends Component {
           className={classes.formContainer}
           style={{
             background: `url(${background})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            height: "125vh", // Set the height to occupy the full viewport height
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <Grid item xs={12} sm={7}>

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { v4 as uuid } from "uuid";
-import { getSectorCompany } from "../../../../utils/APIRoutes";
+import { getSectorCompany,host } from "../../../../utils/APIRoutes";
 import {
   CategoryContainer,
   ContentHolder,
@@ -92,12 +92,10 @@ function Categories({ white }) {
   return (
     <CategoryContainer white={white}>
       <ContentHolder>
-        <TitleContainer style={{ color: "white" }}>
+        <TitleContainer style={{ color: "black" }}>
           <Title>
             Companies Focused in{" "}
-            <ColoredSlogan style={{ color: "whitesmoke" }}>
-              Technology
-            </ColoredSlogan>
+            <ColoredSlogan style={{ color: "black" }}>Technology</ColoredSlogan>
           </Title>
         </TitleContainer>
         <HContainer>
@@ -110,7 +108,8 @@ function Categories({ white }) {
                 }
               >
                 <div className="box1" id={uuid()}>
-                  <FcAdvertisment />
+                  {/* <FcAdvertisment /> */}
+                  <img src={host + "/" + company.avatarImage} alt="ss" />
                 </div>
                 <div className="box2" id={uuid()}>
                   <h6>{company.name}</h6>
@@ -127,9 +126,9 @@ function Categories({ white }) {
       </ContentHolder>
       <ContentHolder>
         <TitleContainer>
-          <Title style={{ color: "white" }}>
+          <Title style={{ color: "black" }}>
             Companies Focused in{" "}
-            <ColoredSlogan style={{ color: "whitesmoke" }}>
+            <ColoredSlogan style={{ color: "black" }}>
               Health Care
             </ColoredSlogan>
           </Title>
@@ -161,9 +160,9 @@ function Categories({ white }) {
       </ContentHolder>
       <ContentHolder>
         <TitleContainer>
-          <Title style={{ color: "white" }}>
+          <Title style={{ color: "black" }}>
             Companies Focused in{" "}
-            <ColoredSlogan style={{ color: "whitesmoke" }}>
+            <ColoredSlogan style={{ color: "black" }}>
               Entertainment Industry
             </ColoredSlogan>
           </Title>
@@ -195,11 +194,9 @@ function Categories({ white }) {
       </ContentHolder>
       <ContentHolder>
         <TitleContainer>
-          <Title style={{ color: "white" }}>
+          <Title style={{ color: "black" }}>
             Companies Focused in{" "}
-            <ColoredSlogan style={{ color: "whitesmoke" }}>
-              Finance
-            </ColoredSlogan>
+            <ColoredSlogan style={{ color: "black" }}>Finance</ColoredSlogan>
           </Title>
         </TitleContainer>
         <HContainer>
@@ -229,9 +226,9 @@ function Categories({ white }) {
       </ContentHolder>
       <ContentHolder>
         <TitleContainer>
-          <Title style={{ color: "white" }} s>
+          <Title style={{ color: "black" }} s>
             Companies Focused in{" "}
-            <ColoredSlogan style={{ color: "whitesmoke" }}>
+            <ColoredSlogan style={{ color: "black" }}>
               Real Estates
             </ColoredSlogan>
           </Title>
