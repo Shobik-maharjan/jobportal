@@ -192,12 +192,12 @@ function ApplicantTodos() {
   return (
     <EventContainer>
       <ContentsContainer>
-        <h1 style={{ color: "white" }}>Your Todos</h1>
+        <h1 style={{ color: "black" }}>Your Todos</h1>
         <div id="addBtnHolder">
           <Button
             variant="outline-primary"
             style={{
-              color: "white",
+              color: "black",
               marginBottom: "1rem",
               backdropFilter: "blur(10px)",
             }}
@@ -211,14 +211,14 @@ function ApplicantTodos() {
           {selected === "all" ? (
             <Button
               variant="btn btn-primary"
-              style={{ color: "white", border: "none" }}
+              style={{ color: "black", border: "none" }}
             >
               <FiClock size={18} /> <span>All</span>
             </Button>
           ) : (
             <Button
               variant="outline-primary"
-              style={{ color: "white", border: "none" }}
+              style={{ color: "black", border: "none" }}
               onClick={() => setSelected("all")}
             >
               <FiClock size={18} /> <span>All</span>
@@ -227,14 +227,14 @@ function ApplicantTodos() {
           {selected === "pending" ? (
             <Button
               variant="btn btn-warning"
-              style={{ color: "white", border: "none" }}
+              style={{ color: "black", border: "none" }}
             >
               <FiClock size={18} /> <span>Pending</span>
             </Button>
           ) : (
             <Button
               variant="outline-warning"
-              style={{ color: "white", border: "none" }}
+              style={{ color: "black", border: "none" }}
               onClick={() => setSelected("pending")}
             >
               <FiClock size={18} /> <span>Pending</span>
@@ -244,14 +244,14 @@ function ApplicantTodos() {
           {selected === "completed" ? (
             <Button
               variant="btn btn-success"
-              style={{ color: "white", border: "none" }}
+              style={{ color: "black", border: "none" }}
             >
               <FiClock size={18} /> <span>Completed</span>
             </Button>
           ) : (
             <Button
               variant="outline-success"
-              style={{ color: "white", border: "none" }}
+              style={{ color: "black", border: "none" }}
               onClick={() => setSelected("completed")}
             >
               <FiClock size={18} /> <span>Completed</span>
@@ -276,8 +276,10 @@ function ApplicantTodos() {
                 data-tilt-max-glare="0.3"
                 className="cardEmpty"
               >
-                <h2 class="name">No Todos Found</h2>
-                <p style={{ color: "white", textAlign: "center" }}>
+                <h2 class="name" style={{ color: "black" }}>
+                  No Todos Found
+                </h2>
+                <p style={{ color: "black", textAlign: "center" }}>
                   {" "}
                   Explore the site
                 </p>
@@ -286,7 +288,7 @@ function ApplicantTodos() {
                     <button
                       style={{
                         backgroundColor: "#0d6efd",
-                        color: "white",
+                        color: "black",
                         padding: "0.5rem",
                         borderRadius: "1rem",
                       }}
@@ -335,6 +337,7 @@ function ApplicantTodos() {
                           style={{
                             backgroundColor: "transparent",
                             border: "none",
+                            color: "black",
                           }}
                         >
                           <BsFillCaretDownFill />
@@ -348,14 +351,14 @@ function ApplicantTodos() {
                         >
                           <Dropdown.Item
                             href="#/action-2"
-                            style={{ color: "white" }}
+                            style={{ color: "black" }}
                             onClick={() => handleUpdate(event.event._id)}
                           >
                             Complete
                           </Dropdown.Item>
                           <Dropdown.Item
                             href="#/action-3"
-                            style={{ color: "white" }}
+                            style={{ color: "black" }}
                             onClick={() => handleDelete(event.event._id)}
                           >
                             Delete
@@ -385,7 +388,7 @@ function ApplicantTodos() {
                         </p>
                       </div>
                       <div className="event-badge">
-                        <p style={{ textAlign: "justify" }}>
+                        <p style={{ textAlign: "justify", color: "black" }}>
                           {event.event.isCompleted ? (
                             <h5>
                               <Badge bg="success">Completed</Badge>
@@ -404,6 +407,7 @@ function ApplicantTodos() {
                             style={{
                               backgroundColor: "transparent",
                               border: "none",
+                              color: "black",
                             }}
                           >
                             <BsFillCaretDownFill />
@@ -417,14 +421,14 @@ function ApplicantTodos() {
                           >
                             <Dropdown.Item
                               href="#/action-2"
-                              style={{ color: "white" }}
+                              style={{ color: "black" }}
                               onClick={() => handleUpdate(event.event._id)}
                             >
                               Complete
                             </Dropdown.Item>
                             <Dropdown.Item
                               href="#/action-3"
-                              style={{ color: "white" }}
+                              style={{ color: "black" }}
                               onClick={() => handleDelete(event.event._id)}
                             >
                               Delete
@@ -474,6 +478,7 @@ function ApplicantTodos() {
                             style={{
                               backgroundColor: "transparent",
                               border: "none",
+                              color: "black",
                             }}
                           >
                             <BsFillCaretDownFill />
@@ -487,14 +492,14 @@ function ApplicantTodos() {
                           >
                             <Dropdown.Item
                               href="#/action-2"
-                              style={{ color: "white" }}
+                              style={{ color: "black" }}
                               onClick={() => handleUpdate(event.event._id)}
                             >
                               Complete
                             </Dropdown.Item>
                             <Dropdown.Item
                               href="#/action-3"
-                              style={{ color: "white" }}
+                              style={{ color: "black" }}
                               onClick={() => handleDelete(event.event._id)}
                             >
                               Delete

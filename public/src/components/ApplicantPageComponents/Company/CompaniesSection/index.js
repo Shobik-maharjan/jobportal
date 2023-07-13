@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { v4 as uuid } from "uuid";
-import { getSectorCompany,host } from "../../../../utils/APIRoutes";
+import { getSectorCompany, host } from "../../../../utils/APIRoutes";
 import {
   CategoryContainer,
   ContentHolder,
@@ -143,7 +143,7 @@ function Categories({ white }) {
                 }
               >
                 <div className="box1" id={uuid()}>
-                  <FcAdvertisment />
+                  <img src={host + "/" + company.avatarImage} alt="ss" />
                 </div>
                 <div className="box2" id={uuid()}>
                   <h6>{company.name}</h6>
@@ -177,7 +177,7 @@ function Categories({ white }) {
                 }
               >
                 <div className="box1" id={uuid()}>
-                  <FcAdvertisment />
+                  <img src={host + "/" + company.avatarImage} alt="ss" />{" "}
                 </div>
                 <div className="box2" id={uuid()}>
                   <h6>{company.name}</h6>
@@ -209,7 +209,7 @@ function Categories({ white }) {
                 }
               >
                 <div className="box1" id={uuid()}>
-                  <FcAdvertisment />
+                  <img src={host + "/" + company.avatarImage} alt="ss" />{" "}
                 </div>
                 <div className="box2" id={uuid()}>
                   <h6>{company.name}</h6>
@@ -243,7 +243,7 @@ function Categories({ white }) {
                 }
               >
                 <div className="box1" id={uuid()}>
-                  <FcAdvertisment />
+                  <img src={host + "/" + company.avatarImage} alt="ss" />{" "}
                 </div>
                 <div className="box2" id={uuid()}>
                   <h6>{company.name}</h6>

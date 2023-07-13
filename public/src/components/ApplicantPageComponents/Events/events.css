@@ -1,6 +1,6 @@
 .event-card .event {
   background-color: transparent !important;
-  border: 1px solid white !important;
+  border: 1px solid black !important;
   border-radius: 2rem !important;
   display: flex;
   justify-content: space-around !important;
@@ -20,7 +20,7 @@
 .event-card .event .event-details .event-name,
 .event-card .event .event-details .event-time,
 .event-card .event .event-details .event-participant {
-  color: white !important;
+  color: black !important;
   width: max-content;
   margin: auto;
 }
@@ -35,7 +35,7 @@
 }
 
 .event-card .event .event-description p {
-  color: white;
+  color: black;
   margin-bottom: 0;
 }
 .event-card .event .event-description {
@@ -60,7 +60,7 @@
 
 .event-card .event .calendar .calendar-body .day,
 .event-card .event .calendar .calendar-body .date {
-  color: white !important;
+  color: black !important;
 }
 
 .event-card .event .event-dropdown {
@@ -112,10 +112,10 @@
 .react-time-picker__inputGroup input,
 .react-time-picker__inputGroup select,
 .react-time-picker__inputGroup button {
-  color: white !important;
+  color: black !important;
 }
 
 .react-time-picker__clear-button svg,
 .react-time-picker__clock-button svg {
-  stroke: white !important;
+  stroke: black !important;
 }
