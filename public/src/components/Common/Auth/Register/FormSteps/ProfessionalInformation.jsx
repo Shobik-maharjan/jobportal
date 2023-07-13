@@ -216,7 +216,7 @@ export default function ProfessionalInfo({
                             justifyContent: "space-between",
                           }}
                         >
-                          <h6>End Date</h6>
+                          <h6 style={{ color: "white" }}>End Date</h6>
                           <ReactDatePicker
                             selected={education.eend}
                             onChange={(date) =>
