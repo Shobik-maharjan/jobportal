@@ -53,7 +53,7 @@ function FilterListToggle({ options, value, selectToggle }) {
           className={classes.toggle}
           key={id}
           value={value}
-          style={{ fontWeight: 500, color: "white", borderColor: "white" }}
+          style={{ fontWeight: 500, color: "black", borderColor: "black" }}
         >
           {label}
         </ToggleButton>

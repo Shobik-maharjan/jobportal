@@ -15,7 +15,7 @@ export const InputGroup = styled.div`
 export const FilterContainer = styled.div`
   /* height: 100vh; */
   backdrop-filter: blur(20px);
-  color: white;
+  color: black;
   padding-left: 1rem;
   padding-right: 0.2rem;
   padding-top: 1rem;
@@ -32,6 +32,7 @@ export const Togglegroup = styled(ToggleGroup)`
 
   button {
     border-color: white !important;
+    color: white;
     /* border-color: white; */
   }
 `;
@@ -45,8 +46,8 @@ export const Countrydropdown = styled(CountryDropdown)`
   background-color: transparent;
   width: max-content;
   border-radius: 0.8rem;
-  color: white;
-  border-color: white !important;
+  color: black;
+  border-color: black !important;
 
   option {
     text-align: left;
@@ -64,8 +65,8 @@ export const Regiondropdown = styled(RegionDropdown)`
   outline: none;
   background-color: transparent;
   border-radius: 0.8rem;
-  color: white;
-  border-color: white !important;
+  color: black;
+  border-color: black !important;
 
   option {
     text-align: left;

@@ -48,7 +48,7 @@ export const TextContent = styled.div`
   justify-content: space-around;
   width: 90%;
   margin: auto;
-  line-height: 4rem;
+  line-height: 1rem;
   @media screen and (max-width: 640px) {
     padding: 0;
     width: 100%;
@@ -62,7 +62,7 @@ export const Slogan = styled.h1`
   width: 81%;
   margin: auto;
   line-height: 3.2rem;
-  color: white;
+  color: black;
   @media screen and (max-width: 640px) {
     width: 100%;
   }

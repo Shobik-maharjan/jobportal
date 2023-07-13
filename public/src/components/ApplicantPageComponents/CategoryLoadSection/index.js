@@ -26,7 +26,7 @@ function CategoryDescription() {
           </Slogan>
         </HeadTitle>
         <HeadSubtitle>
-          <SloganSubtext style={{ color: "white" }}>
+          <SloganSubtext style={{ color: "black" }}>
             Find the job of best suited to your intrests. Anything from
             Real-Estate to Health, Technology to Social Work
           </SloganSubtext>

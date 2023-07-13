@@ -31,7 +31,7 @@ export const DescriptionTitle = styled.h3`
 
 export const Summary = styled.p`
   text-align: justify;
-  color: white;
+  color: black;
 `;
 
 export const Listing = styled.div`
@@ -49,7 +49,7 @@ export const TitleListing = styled.div`
 `;
 
 export const JobTitle = styled.h4`
-  color: white;
+  color: black;
   /* margin-bottom: 1rem;
   margin-top: 0; */
   margin-bottom: 0;
@@ -62,12 +62,12 @@ export const Location = styled.div`
 `;
 
 export const Company = styled.p`
-  color: whitesmoke;
+  color: black;
   font-size: 14px;
 `;
 
 export const Address = styled.p`
-  color: white;
+  color: black;
   font-size: 14px;
 `;
 
@@ -78,13 +78,13 @@ export const TypeDateListing = styled.div`
 export const JobType = styled.div`
   padding: 0.3rem 1rem;
   backdrop-filter: blur(10px);
-  color: white;
+  color: black;
   /* margin: 0.5rem 0; */
   border-radius: 10px;
   text-align: center;
 `;
 
 export const Date = styled.p`
-  color: white;
+  color: black;
   font-size: 14px;
 `;

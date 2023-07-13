@@ -25,7 +25,7 @@ export const CompanyInfo = styled.div`
   justify-content: space-around;
   width: 70%;
   margin: 1rem 0;
-  color: white;
+  color: black;
 `;
 
 export const LogoContainer = styled.div`
@@ -65,25 +65,25 @@ export const Salary = styled.p`
 export const SectionTitle = styled.p`
   font-weight: 500;
   font-size: 1.5rem;
-  color: white;
+  color: black;
 `;
 
 export const AboutContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: white;
+  color: black;
 `;
 
 export const CompanyDescription = styled.div`
   margin: 0.5rem 0;
-  color: white;
+  color: black;
 `;
 
 export const Description = styled.p`
   text-align: justify;
   line-height: 1.5rem;
-  color: white;
+  color: black;
 `;
 export const SkillSection = styled.div`
   width: 70%;
@@ -101,10 +101,10 @@ export const Skills = styled.div`
 export const Skill = styled.p`
   padding: 0.5rem 1.5rem;
   background-color: transparent;
-  border: 1px solid #045de9;
+  border: 1px solid black;
   display: flex;
   border-radius: 50px;
-  color: white;
+  color: black;
 `;
 
 export const DescSection = styled.div`
@@ -115,7 +115,7 @@ export const DescSection = styled.div`
 
 export const Desc = styled.p`
   margin: 1rem 0;
-  color: white;
+  color: black;
 `;
 
 export const Section = styled.p`
@@ -131,7 +131,7 @@ export const ResponsibilitySection = styled.div`
 
 export const Responsibilities = styled.ul`
   text-align: left;
-  color: white;
+  color: black;
 `;
 
 export const Responsibility = styled.li`

@@ -25,8 +25,8 @@ function SeekerHero() {
       {/* <ParticleBackground /> */}
       <ContentHolder>
         <TextContent>
-          <Slogan>Get The Right Job {"\n"} You Deserve</Slogan>
-          <SloganSubtext style={{ color: "white" }}>
+          <Slogan>Get The Right Job {"\n"} You Deserve</Slogan>``
+          <SloganSubtext style={{ color: "black", fontSize: "1.2rem" }}>
             100,000 jobs listed here! Your dream Job is Waiting
           </SloganSubtext>
         </TextContent>

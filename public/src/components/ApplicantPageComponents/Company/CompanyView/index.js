@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import LoadingImage from "../../../../images/loading.gif";
 import { getCompanyDetails, host } from "../../../../utils/APIRoutes";
-import { JobTitle } from "../../../EmployerComponents/Dashboard/Components";
-import { JobType } from "../../../ProfileComponents/InformationComponent/Component";
+import { JobTitle } from "../../Home/SeekerJob/JobElements";
+import { JobType } from "../../Home/SeekerJob/JobElements";
 import {
   ApplyButton,
   CompanyInfoHoler,
@@ -70,7 +70,6 @@ function Careers() {
                 <JobCardsHoler style={{ width: "100%" }}>
                   {company.jobs.map((job) => (
                     <JobCard
-                      style={{ width: "25%" }}
                       className="career-card"
                       onClick={(event) =>
                         (window.location.href = `/applicant/job/${job._id}`)
@@ -97,10 +96,10 @@ function Careers() {
                         </div>
                       </CompanyInfoHoler>
                       <JobTitleHolder>
-                        <JobTitle>{job.title}</JobTitle>
-                        <JobType style={{ width: "70%", margin: "auto" }}>
-                          Full Time
-                        </JobType>
+                        <JobTitle style={{ textAlign: "left" }}>
+                          {job.title}
+                        </JobTitle>
+                        <JobType style={{ margin: "auto" }}>Full Time</JobType>
                       </JobTitleHolder>
                       <JobDescriptionBox style={{ width: "100%" }}>
                         <JobDescription>{job.description}</JobDescription>
