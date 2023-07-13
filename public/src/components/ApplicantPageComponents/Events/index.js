@@ -209,14 +209,15 @@ function ApplicantEvents() {
   return (
     <EventContainer>
       <ContentsContainer>
-        <h1 style={{ color: "white" }}>Your Events</h1>
+        <h1 style={{ color: "black" }}>Your Events</h1>
         <div id="addBtnHolder">
           <Button
             variant="outline-primary"
             style={{
-              color: "white",
+              color: "black",
               marginBottom: "1rem",
               backdropFilter: "blur(10px)",
+              border: "none",
             }}
             onClick={() => openModal()}
           >
@@ -227,25 +228,25 @@ function ApplicantEvents() {
         <div id="btnHolder">
           <Button
             variant="outline-primary"
-            style={{ color: "white", border: "none" }}
+            style={{ color: "black", border: "none" }}
           >
             <FiClock size={18} /> <span>Today</span>
           </Button>
           <Button
             variant="outline-warning"
-            style={{ color: "white", border: "none" }}
+            style={{ color: "black", border: "none" }}
           >
             <FiClock size={18} /> <span>This Week</span>
           </Button>
           <Button
             variant="outline-danger"
-            style={{ color: "white", border: "none" }}
+            style={{ color: "black", border: "none" }}
           >
             <FiClock size={18} /> <span>This Month</span>
           </Button>
           <Button
             variant="outline-success"
-            style={{ color: "white", border: "none" }}
+            style={{ color: "black", border: "none" }}
           >
             <FiClock size={18} />
             <span>All</span>
@@ -282,7 +283,7 @@ function ApplicantEvents() {
                     <p className="event-name">{event.event.title}</p>
                     <div className="event-participant">
                       {" "}
-                      <AiOutlineUser /> Chirag Simkhada
+                      <AiOutlineUser /> username
                     </div>
                     <div className="event-time">
                       {" "}
@@ -300,6 +301,7 @@ function ApplicantEvents() {
                         style={{
                           backgroundColor: "transparent",
                           border: "none",
+                          color: "black",
                         }}
                       >
                         <BsFillCaretDownFill />
@@ -313,14 +315,14 @@ function ApplicantEvents() {
                       >
                         <Dropdown.Item
                           href="#/action-2"
-                          style={{ color: "white" }}
+                          style={{ color: "black" }}
                           onClick={() => handleUpdate(event.event._id)}
                         >
                           Complete
                         </Dropdown.Item>
                         <Dropdown.Item
                           href="#/action-3"
-                          style={{ color: "white" }}
+                          style={{ color: "black" }}
                           onClick={() => handleDelete(event.event._id)}
                         >
                           Delete

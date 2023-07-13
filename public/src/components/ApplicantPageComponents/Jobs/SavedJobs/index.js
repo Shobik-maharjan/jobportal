@@ -105,7 +105,7 @@ function SavedJobs() {
                     className="cardEmpty"
                   >
                     <h2 class="name">No Favourite Jobs Found</h2>
-                    <p style={{ color: "white", textAlign: "center" }}>
+                    <p style={{ color: "black", textAlign: "center" }}>
                       {" "}
                       Explore Available Jobs
                     </p>
@@ -113,8 +113,8 @@ function SavedJobs() {
                       <Link to="/applicant/home">
                         <button
                           style={{
-                            backgroundColor: "#0d6efd",
-                            color: "white",
+                            backgroundColor: "white",
+                            color: "black",
                             padding: "0.5rem",
                             borderRadius: "1rem",
                           }}
