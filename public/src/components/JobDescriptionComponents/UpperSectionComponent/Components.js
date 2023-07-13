@@ -20,7 +20,7 @@ export const TextContentSection = styled.div`
 
 export const JobInfoTitle = styled.p`
   line-height: 0.5rem;
-  color: #f5fcfc;
+  color: black;
   font-size: 2rem;
   text-align: center;
 `;
@@ -31,8 +31,9 @@ export const ColoredTitle = styled.h2`
 `;
 
 export const JobInfoSub = styled.p`
-  color: #f5fcfc;
+  color: black;
   font-size: 1.2rem;
+  text-align: center;
 `;
 
 export const UnStyled = styled.span`

@@ -9,8 +9,9 @@ import {
 
 export const Nav = styled.nav`
   background: ${({ scrollNav }) =>
-    scrollNav ? "rgba(0,0,0, 0.3)" : "transparent"};
-  backdrop-filter: ${({ scrollNav }) => (scrollNav ? "blur(20px);" : "")};
+    scrollNav ? "rgba(0,0,0, 0.5)" : "rgba(0,0,0, 0.8)"};
+  backdrop-filter: ${({ scrollNav }) =>
+    scrollNav ? "blur(20px);" : "blur(20px)"};
   height: 80px;
   margin-top: -80px;
   display: flex;

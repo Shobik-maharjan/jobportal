@@ -157,9 +157,9 @@ const SeekerNav = ({ toggle }) => {
                   id="profileDropdown"
                   aria-labelledby="dropdownMenuButton"
                   style={{
-                    background: "transparent",
+                    background: "#000000a3",
                     backdropFilter: "blur(20px)",
-                    border: "1px solid white",
+                    border: "px solid white",
                     boxShadow: "none",
                     color: "white",
                   }}

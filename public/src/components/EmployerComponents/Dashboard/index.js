@@ -14,6 +14,8 @@ import {
   editJob,
   getEvent,
   getTodo,
+  // deleteJob,
+  // getJob,
 } from "../../../utils/APIRoutes";
 import EventsBar from "../Common/EventsBar";
 import {
@@ -262,8 +264,10 @@ function Dashboard({
 
   const [events, setEvents] = useState([]);
   const [todos, setTodos] = useState([]);
+  // const [jobs, setJobs] = useState([]);
   const [loadingEvents, setLoadingEvents] = useState(false);
   const [loadingTodos, setLoadingTodos] = useState(false);
+  // const [loadingJobs, setLoadingJobs] = useState(false);
 
   const getEvents = async () => {
     setLoadingEvents(true);
@@ -316,6 +320,32 @@ function Dashboard({
       });
     setLoadingTodos(false);
   };
+
+  // const getJobs = async () => {
+  //   setLoadingJobs(true);
+  //   const token = await JSON.parse(localStorage.getItem("token"));
+  //   const config = {
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: `Bearer ${token}`,
+  //     },
+  //   };
+  //   axios
+  //     .get(getJob, config)
+  //     .then((result) => {
+  //       console.log(result);
+  //       if (result.status === 200) {
+  //         setJobs(result.data.todos);
+  //       } else {
+  //         toast.error("Error Fetching jobs", toastOptions);
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       toast.error("Some Unknown error occured", toastOptions);
+  //     });
+  //   setLoadingJobs(false);
+  // };
 
   const [todo, setTodo] = useState({
     title: "",
@@ -607,9 +637,31 @@ function Dashboard({
     }
   };
 
+  // const deleteJobs = async (job) => {
+  //   const token = await JSON.parse(localStorage.getItem("token"));
+  //   const config = {
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: `Bearer ${token}`,
+  //     },
+  //   };
+
+  //   axios
+  //     .delete(deleteJob + `/${job}`, config)
+  //     .then((res) => {
+  //       console.log(res);
+  //       toast.success("Job Removed Successfully", toastOptions);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       toast.error("Error Removing Job", toastOptions);
+  //     });
+  // };
+
   useEffect(() => {
     getEvents();
     getTodos();
+    // getJobs();
   }, []);
 
   return (
@@ -742,6 +794,7 @@ function Dashboard({
                           <DropLink
                             href="#"
                             className="dropdown-item px-4 py-2"
+                            // onClick={() => deleteJobs(jobDetail.job._id)}
                           >
                             Delete
                           </DropLink>
@@ -891,6 +944,9 @@ function Dashboard({
         todo={todo}
         handleTodoSubmit={handleTodoSubmit}
         getTodos={getTodos}
+        // loadingJobs={loadingJobs}
+        // jobs={jobs}
+        // getJobs={getJobs}
       />
       {showModal && (
         <JobModal

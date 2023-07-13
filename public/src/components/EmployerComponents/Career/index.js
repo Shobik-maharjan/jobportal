@@ -197,6 +197,7 @@ function Careers({ isOpen, user, com }) {
                       style={{
                         backgroundColor: "transparent",
                         border: "none",
+                        fontSize: "40px",
                       }}
                     ></Dropdown.Toggle>
 
@@ -272,11 +273,13 @@ function Careers({ isOpen, user, com }) {
                           </JobType>
                         </JobTitleHolder>
                         <JobDescriptionBox style={{ zIndex: "10000" }}>
-                          <JobDescription>{job.description}</JobDescription>
+                          <JobDescription style={{ color: "white" }}>
+                            {job.description}
+                          </JobDescription>
                         </JobDescriptionBox>
                         <JobFooter style={{ zIndex: "10000" }}>
-                          <Salary>
-                            ${job.salary}
+                          <Salary style={{ color: "white" }}>
+                            Rs. {job.salary}
                             <Muted>/month</Muted>
                           </Salary>
                           <ApplyButton style={{ backgroundColor: "#242933" }}>

@@ -23,7 +23,7 @@ function CompanyHeadSection() {
           </Slogan>
         </HeadTitle>
         <HeadSubtitle>
-          <SloganSubtext style={{ color: "green" }}>
+          <SloganSubtext style={{ color: "black" }}>
             Find the companies best suited to your intrests. Anything from
             Real-Estate to Health, Technology to Social Work
           </SloganSubtext>

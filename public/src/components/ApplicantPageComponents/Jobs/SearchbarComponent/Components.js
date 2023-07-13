@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const SearchbarWrap = styled.div`
   /* border-bottom: 1px solid white; */
   padding: 1.5rem 1rem;
+  margin-top: 2rem;
 `;
 export const ContentWrap = styled.div`
   display: flex;
@@ -11,12 +12,12 @@ export const ContentWrap = styled.div`
   width: 40%;
   margin: auto;
   border-radius: 2rem;
-  border: 1px solid white;
+  border: 1px solid black;
   backdrop-filter: blur(20px);
 `;
 
 export const Searchicon = styled(SearchIcon)`
-  color: white;
+  color: black;
   margin-right: 2rem;
   margin-left: 1rem;
 `;
@@ -30,10 +31,10 @@ export const SearchInput = styled.input`
   font-family: "Raleway", sans-serif;
   backdrop-filter: blur(20px);
   background: transparent;
-  caret-color: white;
-  color: white;
+  caret-color: black;
+  color: black;
   padding-left: 0.2rem;
   &::placeholder {
-    color: white;
+    color: black;
   }
 `;

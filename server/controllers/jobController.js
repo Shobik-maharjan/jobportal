@@ -5,6 +5,8 @@ const Company = require("../model/CompanyModel");
 const userModel = require("../model/userModel");
 const util = require("util");
 const asyncHandler = require("express-async-handler");
+const JobModel = require("../model/JobModel");
+const CompanyModel = require("../model/CompanyModel");
 
 module.exports.addJob = async (req, res, next) => {
   try {
@@ -453,29 +455,33 @@ module.exports.editJob = async (req, res, next) => {
   }
 };
 
-module.exports.deleteJob = async (req, res, next) => {
-  try {
-    const jobId = req.params.id;
-    const job = await Job.findById(jobId);
+// module.exports.deleteJob = asyncHandler(async (req, res, next) => {
+//   const usr = await req.user._id;
+//   const user = await userModel.findById(usr);
+//   const companies = await CompanyModel.findById(req.params.id);
+//   const job = await JobModel.findById(req.params.id);
 
-    if (!job) {
-      return res.status(404).json({
-        success: false,
-        msg: "Job not found",
-      });
-    }
-
-    await job.remove();
-
-    return res.status(200).json({
-      success: true,
-      msg: "Job deleted successfully",
-    });
-  } catch (error) {
-    console.log(error);
-    return res.status(500).json({
-      success: false,
-      msg: error,
-    });
-  }
-};
+//   if (!companies) {
+//     res.status(400).send("Event not found");
+//   } else {
+//     await job.update({
+//       $pull: { jobs: { job: job } },
+//     });
+//     user
+//       .save()
+//       .then((job) => {
+//         return res.status(200).json({
+//           success: true,
+//           data: job,
+//           msg: "The Event was deleted successfully",
+//         });
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//         return res.status(400).json({
+//           success: false,
+//           msg: "Error Deleting Event",
+//         });
+//       });
+//   }
+// });

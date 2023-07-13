@@ -58,7 +58,7 @@ export const JobCard = styled.div`
   overflow: hidden;
   border-radius: 10%;
   backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  // box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.1),
@@ -99,7 +99,7 @@ export const JobCard = styled.div`
     content: "";
     position: absolute;
     inset: 5px;
-    background: #29303f;
+    background: rgb(41 48 63 / 18%);
     border-radius: 10%;
     overflow: hidden;
     /* background: inherit; */
@@ -113,7 +113,7 @@ export const CompanyInfoHoler = styled.div`
   justify-content: space-between;
   padding: 1rem 2rem;
   text-align: center;
-  color: whitesmoke;
+  color: black;
 
   padding-left: 0;
   /* transition: all 0.2s ease-in-out; */
@@ -143,7 +143,7 @@ export const CompanyInfoHoler = styled.div`
 
 export const JobTitleHolder = styled.div`
   margin: 0.5rem 0;
-  color: #fff;
+  color: black;
 `;
 
 export const JobTitle = styled.h4`
@@ -153,13 +153,13 @@ export const JobTitle = styled.h4`
 
 export const JobType = styled.p`
   font-size: 15px;
-  color: whitesmoke;
+  color: black;
   font-family: "Encode Sans Expanded", sans-serif;
 `;
 
 export const JobDescriptionBox = styled.div`
   width: inherit;
-  color: whitesmoke;
+  color: black;
 `;
 
 export const JobDescription = styled.p`
@@ -181,7 +181,7 @@ export const JobFooter = styled.div`
 
 export const Salary = styled.h5`
   font-weight: bold;
-  color: whitesmoke;
+  color: black;
 `;
 export const Muted = styled.span`
   font-size: 12px;

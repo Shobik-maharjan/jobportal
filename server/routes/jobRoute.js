@@ -12,6 +12,7 @@ const {
   getSavedJobs,
   editJob,
   getCompanyJobDetailApp,
+  deleteJob,
 } = require("../controllers/jobController");
 const { protect } = require("../middleware/authMiddleware");
 
@@ -32,5 +33,6 @@ router.route("/appliedJobs").get(protect, getAppliedJobs);
 router.route("/appliedJobsApp").get(protect, getAppliedJobsApp);
 router.route("/applyForJob").post(protect, applyForJob);
 router.route("/editJob").put(protect, editJob);
+// router.route("/deleteJob/:id").delete(protect, deleteJob);
 
 module.exports = router;

@@ -68,7 +68,7 @@ export const SkillHolder = styled.ul`
 `;
 
 export const Skill = styled.li`
-  color: white;
+  color: black;
   padding: 0 0.2rem;
   margin: 0 0.4rem;
   border-radius: 0.7rem;
@@ -83,7 +83,7 @@ export const InfoHolder = styled.div`
 `;
 
 export const Info = styled.h5`
-  color: white;
+  color: black;
   border-bottom: 1px dotted gray;
   padding: 1rem 0;
   display: flex;

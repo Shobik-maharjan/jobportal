@@ -20,7 +20,6 @@ export const JobCard = styled.div`
   position: relative;
   overflow: hidden;
   border-radius: 10%;
-
   @media screen and (max-width: 1000px) {
     max-width: 40%;
   }
@@ -64,7 +63,7 @@ export const JobCard = styled.div`
     content: "";
     position: absolute;
     inset: 5px;
-    background: #29303f;
+    background: rgb(41 48 63 / 18%);
     border-radius: 10%;
   }
 `;
@@ -77,7 +76,6 @@ export const CompanyInfoHoler = styled.div`
   /* background-color: white; */
   padding: 1rem 2rem;
   text-align: center;
-  color: white;
 
   padding-left: 0;
   transition: all 0.2s ease-in-out;
@@ -90,11 +88,10 @@ export const CompanyInfoHoler = styled.div`
     grid-column-start: content-row;
     transition: all 0.2s ease-in-out;
     margin-left: 0.5rem;
-
+    color: black;
     h6 {
       margin: 0;
       text-align: left;
-      color: white;
     }
 
     p {
@@ -102,25 +99,22 @@ export const CompanyInfoHoler = styled.div`
       text-align: left;
       font-size: 14px;
       margin: 0;
-      color: white;
     }
   }
 `;
 
 export const JobTitleHolder = styled.div`
   margin: 0.5rem 0;
-  color: white;
+  color: black;
 `;
 
 export const JobTitle = styled.h4`
   margin-bottom: 0;
   font-family: "Encode Sans Expanded", sans-serif;
-  color: white;
 `;
 
 export const JobType = styled.p`
   font-size: 15px;
-  color: gray;
   font-family: "Encode Sans Expanded", sans-serif;
 `;
 
@@ -137,7 +131,7 @@ export const JobDescription = styled.p`
   -webkit-box-orient: vertical;
   color: rgb(112, 137, 157);
   font-family: "Source Sans Pro", sans-serif;
-  color: white;
+  color: black;
 `;
 
 export const JobFooter = styled.div`
@@ -148,7 +142,7 @@ export const JobFooter = styled.div`
 
 export const Salary = styled.h5`
   font-weight: bold;
-  color: white;
+  color: black;
 `;
 export const Muted = styled.span`
   font-size: 12px;

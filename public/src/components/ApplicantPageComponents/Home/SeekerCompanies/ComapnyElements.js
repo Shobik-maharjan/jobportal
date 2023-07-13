@@ -81,12 +81,12 @@ export const CategoryCard = styled(CardsContainer)`
     grid-column-start: context;
     transition: all 0.2s ease-in-out;
     h6 {
-      color: #fff;
+      color: black;
     }
 
     p {
       transition: all 0.2s ease-in-out;
-      color: #fff;
+      color: black;
       font-size: 14px;
       margin: 0;
     }

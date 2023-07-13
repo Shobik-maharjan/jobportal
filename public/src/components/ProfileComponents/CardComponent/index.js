@@ -150,7 +150,7 @@ function ProfileCard({ user }) {
           <Link to="profileUpdate">
             <Button
               variant="outlined"
-              style={{ color: "white", borderColor: "#423edd", width: "100%" }}
+              style={{ color: "black", borderColor: "#423edd", width: "100%" }}
             >
               Edit Profile
             </Button>
@@ -160,7 +160,7 @@ function ProfileCard({ user }) {
           <Link to="ChangePassword">
             <Button
               variant="outlined"
-              style={{ color: "white", borderColor: "#423edd", width: "100%" }}
+              style={{ color: "black", borderColor: "#423edd", width: "100%" }}
             >
               Change Password
             </Button>
