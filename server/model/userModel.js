@@ -171,6 +171,9 @@ const userSchema = new mongoose.Schema({
       },
     },
   ],
+  verifytoken: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Users", userSchema);

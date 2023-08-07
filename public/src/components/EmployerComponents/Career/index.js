@@ -197,6 +197,7 @@ function Careers({ isOpen, user, com }) {
                       style={{
                         backgroundColor: "transparent",
                         border: "none",
+                        fontSize: "40px",
                       }}
                     ></Dropdown.Toggle>
 

@@ -697,7 +697,7 @@ function Dashboard({
             >
               <DropItem value="Active">Active Jobs</DropItem>
               <DropItem value="Inactive">Inactive Jobs</DropItem>
-              <DropItem value="Draft">Draft Jobs</DropItem>
+              {/* <DropItem value="Draft">Draft Jobs</DropItem> */}
             </DropDown>
             <SearchContainer className="form-group form-group-with-search d-flex align-items-center">
               <FiSearch

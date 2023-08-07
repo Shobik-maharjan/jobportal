@@ -62,7 +62,7 @@ export const Forgotpassword = () => {
         setPassword("");
         setMessage(true);
       } else {
-        toast.error("! Token Expired generate new LInk", {
+        toast.error("! Token Expired generate new Link", {
           position: "top-center",
         });
       }

@@ -10,6 +10,7 @@ const {
   resendVerification,
   applyJob,
   // sendpasswordlink,
+  //PasswordChange,
   allUsers,
   addEvent,
   markEventCompleted,
@@ -38,6 +39,8 @@ router.post("/sendVerification/", sendVerificationEmail);
 router.post("/reSendVerification/", resendVerification);
 router.get("/applyJob/", applyJob);
 // router.post("/sendpasswordlink/", sendpasswordlink);
+//router.post("/id/:token",PasswordChange)
+// router.get("/forgetpassword/:id/:token", ForgetPassword);
 
 router.route("/getAllUsers").get(protect, allUsers);
 router.route("/getAllUsersApp").get(protect, allUsersApp);

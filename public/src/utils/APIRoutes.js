@@ -15,7 +15,7 @@ export const checkAlreadyApplied = `${host}/api/auth/applyJob`;
 export const emailVerify = `${host}/api/auth/verify`;
 export const sendVerification = `${host}/api/auth/sendVerification`;
 export const reSendVerification = `${host}/api/auth/reSendVerification`;
-// export const sendpasswordlink = `${host}/api/auth/sendpasswordlink`;
+//export const sendpasswordlink = `${host}/api/auth/sendpasswordlink`;
 
 export const addNewJob = `${host}/api/job/addJob`;
 export const getCompanyJobs = `${host}/api/job/getCompanyJobs`;
@@ -28,6 +28,7 @@ export const updateJobStatus = `${host}/api/job/updateJobStatus`;
 export const getAppliedJobs = `${host}/api/job/appliedJobs`;
 export const getSavedJobs = `${host}/api/job/savedJobs`;
 export const editJob = `${host}/api/job/editJob`;
+export const jobStatus = `${host}/api/jobs/:id/status`;
 // export const deleteJob = `${host}/api/job/deleteJob`;
 
 export const getCompanyData = `${host}/api/company/getCompanyData`;

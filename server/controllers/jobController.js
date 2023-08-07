@@ -473,15 +473,29 @@ module.exports.editJob = async (req, res, next) => {
 //         return res.status(200).json({
 //           success: true,
 //           data: job,
-//           msg: "The Event was deleted successfully",
+//           msg: "The job was deleted successfully",
 //         });
 //       })
 //       .catch((err) => {
 //         console.log(err);
 //         return res.status(400).json({
 //           success: false,
-//           msg: "Error Deleting Event",
+//           msg: "Error Deleting job",
 //         });
 //       });
 //   }
 // });
+
+// Update job status active deactive
+module.exports.JobStatus = async (req, res) => {
+  try {
+    const { id } = req.params;
+    // const { isActive } = req.body;
+    const job = await Job.findById(id);
+    job.isActive = !job.isActive;
+    await job.save();
+    return res.json(job);
+  } catch (error) {
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
