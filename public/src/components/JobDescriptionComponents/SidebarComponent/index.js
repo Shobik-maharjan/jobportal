@@ -59,6 +59,7 @@ function Sidebar({ job, isLoading }) {
   const handleSaveJob = () => {
     // Send a request to your backend API to save the job for the logged-in user
     const token = JSON.parse(localStorage.getItem("token"));
+    console.log("Token:", token);
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -74,7 +75,7 @@ function Sidebar({ job, isLoading }) {
       .get(getSavedJobs, config)
       .then((result) => {
         toast.success(result.data.message, toastOptions);
-        console.log(result);
+        // console.log(result);
       })
       .catch((err) => {
         toast.error(err.message, toastOptions);

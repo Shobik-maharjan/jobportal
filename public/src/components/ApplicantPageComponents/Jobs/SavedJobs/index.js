@@ -39,6 +39,7 @@ function SavedJobs() {
       },
     };
     axios.get(getSavedJobs, config).then((result) => {
+      console.log(result);
       setSavedJobs(result.data.savedJobs);
       setIsReady(true);
     });

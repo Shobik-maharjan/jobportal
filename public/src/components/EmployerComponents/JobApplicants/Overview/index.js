@@ -53,6 +53,7 @@ function Overview({ selectedJob }) {
       .then((rest) => {
         if (rest.data.success) {
           toast.success(rest.data.msg, toastOptions);
+          console.log(state);
           // const newState = [...state];
           // newState[source.droppableId][source.index].status = status;
           // setState(newState);

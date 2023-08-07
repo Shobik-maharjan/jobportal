@@ -658,6 +658,27 @@ function Dashboard({
   //     });
   // };
 
+  const activeInactive = (job) => {
+    var skillSets = job.skills.map((skill) => {
+      return {
+        skill: skill,
+      };
+    });
+    var responsibilitySet = job.responsibilities.map((responsibility) => {
+      return {
+        responsibility: responsibility,
+      };
+    });
+    var requirementsSet = job.requirements.map((requirement) => {
+      return {
+        requirement: requirement,
+      };
+    });
+    const dt = new Date(job.closeDate);
+
+    setShowEditModal(true);
+  };
+
   useEffect(() => {
     getEvents();
     getTodos();
@@ -757,35 +778,50 @@ function Dashboard({
                         </div>
                       </JobInfoTop>
                       <JobInfoSide className="dropdown options-dropdown">
-                        <DropBtn
+                        <DropLink
+                          href="#"
+                          className="dropdown-item px-4 py-2"
+                          onClick={() => openEditModal(jobDetail.job)}
+                        >
+                          Edit
+                        </DropLink>
+                        <DropLink
+                          href="#"
+                          className="dropdown-item px-4 py-2"
+                          onClick={() => openEditModal(jobDetail.job)}
+                        >
+                          Deactivate
+                        </DropLink>
+
+                        {/* <DropBtn
                           type="button"
                           data-toggle="dropdown"
                           className="btn-option btn d-flex align-items-center justify-content-center"
                           aria-expanded="false"
                         >
                           <ThreeDots />
-                        </DropBtn>
-                        <ActionsDropDown className="dropdown-menu dropdown-menu-right py-2 mt-1">
-                          <DropLink
+                        </DropBtn> */}
+                        {/* <ActionsDropDown className="dropdown-menu dropdown-menu-right py-2 mt-1"> */}
+                        {/* <DropLink
                             href="#"
                             className="dropdown-item px-4 py-2"
                           >
                             Preview
-                          </DropLink>
-                          <DropLink
+                          </DropLink> */}
+                        {/* <DropLink
                             href="#"
                             className="dropdown-item px-4 py-2"
                             onClick={() => openEditModal(jobDetail.job)}
                           >
                             Edit
-                          </DropLink>
-                          {/* <DropLink
+                          </DropLink> */}
+                        {/* <DropLink
                             href="#"
                             className="dropdown-item px-4 py-2"
                           >
                             Sharable link
                           </DropLink> */}
-                          <DropLink
+                        {/* <DropLink
                             href="#"
                             className="dropdown-item px-4 py-2"
                           >
@@ -797,8 +833,8 @@ function Dashboard({
                             // onClick={() => deleteJobs(jobDetail.job._id)}
                           >
                             Delete
-                          </DropLink>
-                        </ActionsDropDown>
+                          </DropLink> */}
+                        {/* </ActionsDropDown> */}
                       </JobInfoSide>
                     </JobCardHeader>
                     <JobCardBody className="p-4">

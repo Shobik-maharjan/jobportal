@@ -499,3 +499,27 @@ module.exports.JobStatus = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
+// module.exports.JobStatus = async (req, res) => {
+//   try {
+//     const { id } = req.paramas;
+//     const job = await Job.findById(id);
+//     job.isActive = !job.isActive;
+//     await job.save();
+//     return res.json(job);
+//   } catch (error) {
+//     res.status(500).json({ error: "Internal server error" });
+//   }
+// };
+
+// module.exports.searchJob = async (req, res, next) => {
+//   try {
+//     const term = req.body.term;
+
+//     const jobs = await Job.find({ title: term });
+
+//     return res.json({
+//       success: true,
+//       jobs,
+//     });
+//   } catch (error) {}
+// };

@@ -35,7 +35,7 @@ export default function CodeSent() {
     } else {
       const userLocal = JSON.parse(localStorage.getItem("user"));
       userLocal.isVerified = true;
-      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.clear();
       setUser(userLocal);
       toast.success(msg, toastOptions);
       navigate("/verified");
