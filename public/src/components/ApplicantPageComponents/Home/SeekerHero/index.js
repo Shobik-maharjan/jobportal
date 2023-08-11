@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Video from "../../../../videos/video1.mp4";
 import {
   ContentHolder,
@@ -6,9 +6,9 @@ import {
   HeroBg,
   VideoBg,
   HeroContainer,
-  JobSearch,
+  // JobSearch,
   // LocationFilter,
-  SearchBtn,
+  // SearchBtn,
   SearchContainer,
   Slogan,
   SloganSubtext,

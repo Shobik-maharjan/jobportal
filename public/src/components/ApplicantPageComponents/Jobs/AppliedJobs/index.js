@@ -52,37 +52,38 @@ function AppliedJobs() {
             appliedJobs.map((job) => (
               <JobCard
                 onClick={(event) =>
-                  (window.location.href = `/applicant/job/${job.job._id}`)
+                  (window.location.href = `/applicant/job/${job?.job?._id}`)
                 }
               >
                 <div style={{ zIndex: 1 }}>
                   <CompanyInfoHoler>
                     <div className="box1">
                       <img
-                        src={host + "/" + job.job.company.avatarImage}
+                        src={host + "/" + job?.job?.company?.avatarImage}
                         alt="ss"
                       />
                     </div>
                     <div className="box2">
-                      <h6>{job.job.company.name}</h6>
+                      <h6>{job?.job?.company?.name}</h6>
                       <p>
-                        {job.job.company.region}, {job.job.company.country}
+                        {job?.job?.company?.region},{" "}
+                        {job?.job?.company?.country}
                       </p>
                     </div>
                   </CompanyInfoHoler>
                   <JobTitleHolder>
-                    <JobTitle>{job.job.title}</JobTitle>
+                    <JobTitle>{job?.job?.title}</JobTitle>
                     <JobType>Full Time</JobType>
                   </JobTitleHolder>
                   <JobDescriptionBox>
-                    <JobDescription>{job.job.description}</JobDescription>
+                    <JobDescription>{job?.job?.description}</JobDescription>
                   </JobDescriptionBox>
                   <JobFooter>
                     <Salary>
-                      ${job.job.salary}
+                      ${job?.job?.salary}
                       <Muted>/month</Muted>
                     </Salary>
-                    <ApplyButton>Status = {job.status}</ApplyButton>
+                    <ApplyButton>Status = {job?.status}</ApplyButton>
                   </JobFooter>
                 </div>
               </JobCard>

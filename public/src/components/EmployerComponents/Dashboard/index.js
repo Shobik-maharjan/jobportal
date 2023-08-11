@@ -11,6 +11,7 @@ import {
   addEvent,
   addNewJob,
   addTodo,
+  deleteJob,
   editJob,
   getEvent,
   getTodo,
@@ -637,26 +638,26 @@ function Dashboard({
     }
   };
 
-  // const deleteJobs = async (job) => {
-  //   const token = await JSON.parse(localStorage.getItem("token"));
-  //   const config = {
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //   };
+  const deleteJobs = async (job) => {
+    const token = await JSON.parse(localStorage.getItem("token"));
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
 
-  //   axios
-  //     .delete(deleteJob + `/${job}`, config)
-  //     .then((res) => {
-  //       console.log(res);
-  //       toast.success("Job Removed Successfully", toastOptions);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       toast.error("Error Removing Job", toastOptions);
-  //     });
-  // };
+    axios
+      .delete(deleteJob + `/${job}`, config)
+      .then((res) => {
+        console.log(res);
+        toast.success("Job Removed Successfully", toastOptions);
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Error Removing Job", toastOptions);
+      });
+  };
 
   const activeInactive = (job) => {
     var skillSets = job.skills.map((skill) => {
@@ -784,12 +785,16 @@ function Dashboard({
                         >
                           Edit
                         </DropLink>
+                        <DropLink href="#" className="dropdown-item px-4 py-2">
+                          Deactivate
+                        </DropLink>
+
                         <DropLink
                           href="#"
                           className="dropdown-item px-4 py-2"
-                          onClick={() => openEditModal(jobDetail.job)}
+                          onClick={() => deleteJobs(jobDetail.job._id)}
                         >
-                          Deactivate
+                          Delete
                         </DropLink>
 
                         {/* <DropBtn

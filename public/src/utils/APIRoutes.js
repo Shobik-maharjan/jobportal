@@ -24,11 +24,13 @@ export const getAllJobs = `${host}/api/job/getAllJobs`;
 export const getSectorJob = `${host}/api/job/getSectorJob`;
 export const getJob = `${host}/api/job/getJob`;
 export const applyForJob = `${host}/api/job/applyForJob`;
+export const saveJobs = `${host}/api/job/saveJobs`;
 export const updateJobStatus = `${host}/api/job/updateJobStatus`;
 export const getAppliedJobs = `${host}/api/job/appliedJobs`;
 export const getSavedJobs = `${host}/api/job/savedJobs`;
 export const editJob = `${host}/api/job/editJob`;
-// export const deleteJob = `${host}/api/job/deleteJob`;
+export const deleteJob = `${host}/api/job/deleteJob`;
+export const deactiveJob = `${host}/api/job/deactiveJob`;
 
 export const getCompanyData = `${host}/api/company/getCompanyData`;
 export const getAllCompanies = `${host}/api/company/getCompanies`;

@@ -6,7 +6,12 @@ import { AiOutlineCheckCircle } from "react-icons/ai";
 import { BsBookmark } from "react-icons/bs";
 import { MdOutlineMessage } from "react-icons/md";
 import { toast } from "react-toastify";
-import { applyForJob, checkAlreadyApplied } from "../../../utils/APIRoutes";
+import {
+  applyForJob,
+  checkAlreadyApplied,
+  getSavedJobs,
+  saveJobs,
+} from "../../../utils/APIRoutes";
 import {
   ApplyButton,
   ButtonContainer,
@@ -82,6 +87,38 @@ function Sidebar({ job, isLoading }) {
       });
   };
 
+  const handleSaveJob = () => {
+    // Send a request to your backend API to save the job for the logged-in user
+    const token = JSON.parse(localStorage.getItem("token"));
+    console.log("Token:", token);
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    const jobId = job._id;
+    console.log(jobId);
+    axios
+      .post(
+        saveJobs,
+        {
+          params: {
+            jobId: jobId,
+          },
+        },
+        config
+      )
+      .then((result) => {
+        toast.success(result.data.message, toastOptions);
+        // console.log(result);
+      })
+      .catch((err) => {
+        toast.error(err.message, toastOptions);
+        // console.log(err);
+      });
+  };
+
   return (
     <SectionWrapper>
       <ButtonContainer>
@@ -134,7 +171,12 @@ function Sidebar({ job, isLoading }) {
             </ApplyButton>
           </Skeleton>
         )}
-        <SaveButton to="/applicant/home" primary="false" dark="true">
+        <SaveButton
+          to="/applicant/home"
+          primary="false"
+          dark="true"
+          onClick={handleSaveJob}
+        >
           <BsBookmark /> Save This Job
         </SaveButton>
       </ButtonContainer>
