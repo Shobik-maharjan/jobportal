@@ -532,11 +532,11 @@ module.exports.deleteJob = asyncHandler(async (req, res, next) => {
       });
     }
 
-    // Remove the job from the user's appliedJobs
-    user.appliedJobs = user.appliedJobs.filter(
-      (appliedJob) => appliedJob.job.toString() !== jobId
+    // Remove the job from the appliedJobs of all users
+    await userModel.updateMany(
+      { "appliedJobs.job": job._id }, // Filter for users with the applied job
+      { $pull: { appliedJobs: { job: job._id } } } // Pull the job from appliedJobs array
     );
-    await user.save();
 
     // Remove the job from the company's jobs array
     company.jobs.pull(jobId);
@@ -557,3 +557,35 @@ module.exports.deleteJob = asyncHandler(async (req, res, next) => {
     });
   }
 });
+
+// exports.module.deleteJobArray = async (req, res) => {
+//   try {
+//     const jobId = req.params.id;
+
+//     // Find the job to be deleted
+//     const job = await JobModel.findById(jobId);
+
+//     // Find the associated user
+//     const user = await userModel.findById(req.user._id);
+
+//     // Remove the job from the user's appliedJobs
+//     const initialAppliedJobsCount = user.appliedJobs.length;
+//     user.appliedJobs = user.appliedJobs.filter(
+//       (appliedJob) => appliedJob.job.toString() !== jobId
+//     );
+//     await user.save();
+
+//     // Log to check if the appliedJobs array is modified
+//     console.log(
+//       `Applied jobs removed: ${
+//         initialAppliedJobsCount - user.appliedJobs.length
+//       }`
+//     );
+//   } catch (err) {
+//     console.error(err);
+//     return res.status(500).json({
+//       success: false,
+//       msg: "Error deleting job",
+//     });
+//   }
+// };
