@@ -165,14 +165,17 @@ module.exports.getJob = async (req, res, next) => {
 };
 
 // Save a job for a user
-module.exports.saveJobs = async (req, res, next) => {
+module.exports.saveJob = async (req, res, next) => {
   try {
     const userId = req.user._id; // Authenticated user's ID
-    const jobId = req.body.jobId; // Job ID from the request body
+    const jobId = req.params.id; // Job ID from the URL parameter
 
+    console.log(jobId);
     // Find the user and the job
     const user = await userModel.findById(userId);
-    const job = await JobModel.findById(jobId);
+    const job = await Job.findById(jobId);
+
+    console.log(user);
 
     if (!user || !job) {
       return res

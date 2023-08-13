@@ -79,7 +79,7 @@ const SeekerNav = ({ toggle }) => {
                   Home
                 </NavLinks>
               </NavItem>
-              <NavItem>
+              {/* <NavItem>
                 <NavLinks
                   to="category"
                   smooth={true}
@@ -91,7 +91,7 @@ const SeekerNav = ({ toggle }) => {
                 >
                   Categories
                 </NavLinks>
-              </NavItem>
+              </NavItem> */}
               <NavItem>
                 <NavLinks
                   to="jobs"

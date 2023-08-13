@@ -184,7 +184,11 @@ function Careers({ isOpen, user, com }) {
               <div className="CareerHead">
                 <div>
                   <div className="logo-container mb-2" onClick={handleBtnClick}>
-                    <img src={host + "/" + company.avatarImage} alt="ss" />
+                    <img
+                      src={host + "/" + company.avatarImage}
+                      alt="ss"
+                      style={{ color: "white" }}
+                    />
                   </div>
                   <h3 style={{ color: "white" }}>{company.name}</h3>
                   <h5 style={{ color: "white" }}>{company.location}</h5>
@@ -260,8 +264,8 @@ function Careers({ isOpen, user, com }) {
                             {/* <FcBrokenLink style={{ fontSize: "1.5rem" }} /> */}
                           </div>
                           <div className="box2">
-                            <h6>{company.name}</h6>
-                            <p style={{ color: "white !important" }}>
+                            <h6 style={{ color: "white" }}>{company.name}</h6>
+                            <p style={{ color: "white" }}>
                               {company.region}, {company.country}
                             </p>
                           </div>
@@ -296,7 +300,7 @@ function Careers({ isOpen, user, com }) {
                   <img
                     src={host + "/" + company.avatarImage}
                     alt="ss"
-                    style={{ width: "55px" }}
+                    style={{ width: "55px", color: "white" }}
                   />
                 </div>
                 <p style={{ color: "white" }} className="text-capitalize">

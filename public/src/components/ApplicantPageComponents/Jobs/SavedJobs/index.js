@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { FcBrokenLink } from "react-icons/fc";
-import { getSavedJobs } from "../../../../utils/APIRoutes";
+import { getSavedJobs, host } from "../../../../utils/APIRoutes";
 import {
   ColoredSlogan,
   Slogan,
@@ -49,9 +49,7 @@ function SavedJobs() {
     <div style={{ minHeight: "100vh" }}>
       <ContentHolder>
         <TitleHolder>
-          <Slogan>
-            <ColoredSlogan>Favourite</ColoredSlogan> Jobs
-          </Slogan>
+          <Slogan>Saved Jobs</Slogan>
         </TitleHolder>
 
         <JobCardsHoler>
@@ -66,7 +64,10 @@ function SavedJobs() {
                   <div style={{ zIndex: 1 }}>
                     <CompanyInfoHoler>
                       <div className="box1">
-                        <FcBrokenLink style={{ fontSize: "1.5rem" }} />
+                        <img
+                          src={host + "/" + job?.job?.company?.avatarImage}
+                          alt="ss"
+                        />
                       </div>
                       <div className="box2">
                         <h6>{job.job.company.name}</h6>
@@ -87,7 +88,7 @@ function SavedJobs() {
                         ${job.job.salary}
                         <Muted>/month</Muted>
                       </Salary>
-                      <ApplyButton>View Status</ApplyButton>
+                      {/* <ApplyButton>Status = {job.status} </ApplyButton> */}
                     </JobFooter>
                   </div>
                 </JobCard>
@@ -105,13 +106,13 @@ function SavedJobs() {
                     data-tilt-max-glare="0.3"
                     className="cardEmpty"
                   >
-                    <h2 class="name">No Favourite Jobs Found</h2>
+                    <h2 class="name">No Saved Jobs Found</h2>
                     <p style={{ color: "black", textAlign: "center" }}>
                       {" "}
                       Explore Available Jobs
                     </p>
                     <div style={{ margin: "auto" }}>
-                      <Link to="/applicant/home">
+                      <Link to="/applicant/jobs">
                         <button
                           style={{
                             backgroundColor: "white",
