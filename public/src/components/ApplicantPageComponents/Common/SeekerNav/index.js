@@ -120,7 +120,7 @@ const SeekerNav = ({ toggle }) => {
               </NavItem>
             </NavMenu>
             <NavImp>
-              <Notification
+              {/* <Notification
                 size={18}
                 scrollNav={scrollNav}
                 style={{ marginRight: "1rem", cursor: "pointer" }}
@@ -131,7 +131,7 @@ const SeekerNav = ({ toggle }) => {
                 scrollNav={scrollNav}
                 onClick={() => navigate("/chats")}
                 style={{ marginRight: "0.4rem", cursor: "pointer" }}
-              />
+              /> */}
 
               <div class="dropdown">
                 <button

@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import { BiDollar, BiHome, BiMap, BiTimeFive, BiUser } from "react-icons/bi";
 import { FiSearch } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import {
   addEvent,
@@ -652,6 +652,7 @@ function Dashboard({
       .then((res) => {
         console.log(res);
         toast.success("Job Removed Successfully", toastOptions);
+        window.location.href = "dashboard";
       })
       .catch((err) => {
         console.log(err);
@@ -710,7 +711,7 @@ function Dashboard({
             </CreateButton>
           </UpperHead>
           <LowerHead className="d-flex align-items-start justify-content-between">
-            <DropDown
+            {/* <DropDown
               name="typeSelect"
               id="typeSelect"
               className="selectpicker"
@@ -719,8 +720,8 @@ function Dashboard({
             >
               <DropItem value="Active">Active Jobs</DropItem>
               <DropItem value="Inactive">Inactive Jobs</DropItem>
-            </DropDown>
-            <SearchContainer className="form-group form-group-with-search d-flex align-items-center">
+            </DropDown> */}
+            {/* <SearchContainer className="form-group form-group-with-search d-flex align-items-center">
               <FiSearch
                 style={{
                   position: "absolute",
@@ -733,7 +734,7 @@ function Dashboard({
                 placeholder="Search"
                 className="form-control"
               />
-            </SearchContainer>
+            </SearchContainer> */}
           </LowerHead>
         </HeadContainer>
 
@@ -785,9 +786,9 @@ function Dashboard({
                         >
                           Edit
                         </DropLink>
-                        <DropLink href="#" className="dropdown-item px-4 py-2">
+                        {/* <DropLink href="#" className="dropdown-item px-4 py-2">
                           Deactivate
-                        </DropLink>
+                        </DropLink> */}
 
                         <DropLink
                           href="#"

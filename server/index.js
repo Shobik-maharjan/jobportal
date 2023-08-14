@@ -15,6 +15,7 @@ const cors = require("cors");
 
 //Database and Express Connection
 const express = require("express");
+// const fileUpload = require("express-fileupload");
 require("./database/connection");
 
 //Initialize Express instance
@@ -26,6 +27,7 @@ require("dotenv").config();
 //Middlewares
 app.use(cors());
 app.use(express.json());
+// app.use(fileUpload());
 
 //Routes Setup
 app.use("/api/auth", userRoutes);

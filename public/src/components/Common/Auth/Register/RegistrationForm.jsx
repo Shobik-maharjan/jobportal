@@ -58,7 +58,7 @@ class RegistrationForm extends Component {
       toast.error("Please specify your sector", this.toastOptions);
       return false;
     } else if (gender === "") {
-      toast.error("Please specify your sector", this.toastOptions);
+      toast.error("Please select your gender", this.toastOptions);
       return false;
     } else if (type === "") {
       toast.error("Please specify your user type", this.toastOptions);

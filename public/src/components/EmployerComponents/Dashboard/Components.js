@@ -117,7 +117,8 @@ export const DropLink = styled.a`
   display: block;
   padding: 0.35rem 1.5rem;
   &:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #4d5157;
+    color: white;
   }
 `;
 

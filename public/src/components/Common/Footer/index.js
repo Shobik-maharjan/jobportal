@@ -36,17 +36,20 @@ const Footer = () => {
               <FooterLinkTitle> About Us</FooterLinkTitle>
               <p>
                 Job Hire is bridge between the hiring employers and the job
-                seekers{" "}
+                seekers. The main objectives of “Job Hire” is to create a web
+                platform where job-seekers and recruiter can connect and
+                exchange opportunities, facilitating efficient and effective job
+                placement.
               </p>
             </FooterLinkItems>
-            <FooterLinkItems>
+            {/* <FooterLinkItems>
               <FooterLinkTitle> About Us</FooterLinkTitle>
               <FooterLink to="/signin">How it Works? </FooterLink>
               <FooterLink to="/signin">Testimonals </FooterLink>
               <FooterLink to="/signin"> Careers </FooterLink>
               <FooterLink to="/signin">Investors </FooterLink>
               <FooterLink to="/signin">Terms of Service</FooterLink>
-            </FooterLinkItems>
+            </FooterLinkItems> */}
           </FooterLinksWrapper>
         </FooterLinksContainer>
         <SocialMedia>
