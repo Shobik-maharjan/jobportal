@@ -5,12 +5,13 @@ import React, { useEffect, useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import { BiDollar, BiHome, BiMap, BiTimeFive, BiUser } from "react-icons/bi";
 import { FiSearch } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import {
   addEvent,
   addNewJob,
   addTodo,
+  deleteJob,
   editJob,
   getEvent,
   getTodo,
@@ -637,26 +638,27 @@ function Dashboard({
     }
   };
 
-  // const deleteJobs = async (job) => {
-  //   const token = await JSON.parse(localStorage.getItem("token"));
-  //   const config = {
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //   };
+  const deleteJobs = async (job) => {
+    const token = await JSON.parse(localStorage.getItem("token"));
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
 
-  //   axios
-  //     .delete(deleteJob + `/${job}`, config)
-  //     .then((res) => {
-  //       console.log(res);
-  //       toast.success("Job Removed Successfully", toastOptions);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       toast.error("Error Removing Job", toastOptions);
-  //     });
-  // };
+    axios
+      .delete(deleteJob + `/${job}`, config)
+      .then((res) => {
+        console.log(res);
+        toast.success("Job Removed Successfully", toastOptions);
+        window.location.href = "dashboard";
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Error Removing Job", toastOptions);
+      });
+  };
 
   const activeInactive = (job) => {
     var skillSets = job.skills.map((skill) => {
@@ -709,7 +711,7 @@ function Dashboard({
             </CreateButton>
           </UpperHead>
           <LowerHead className="d-flex align-items-start justify-content-between">
-            <DropDown
+            {/* <DropDown
               name="typeSelect"
               id="typeSelect"
               className="selectpicker"
@@ -718,9 +720,8 @@ function Dashboard({
             >
               <DropItem value="Active">Active Jobs</DropItem>
               <DropItem value="Inactive">Inactive Jobs</DropItem>
-              {/* <DropItem value="Draft">Draft Jobs</DropItem> */}
-            </DropDown>
-            <SearchContainer className="form-group form-group-with-search d-flex align-items-center">
+            </DropDown> */}
+            {/* <SearchContainer className="form-group form-group-with-search d-flex align-items-center">
               <FiSearch
                 style={{
                   position: "absolute",
@@ -733,7 +734,7 @@ function Dashboard({
                 placeholder="Search"
                 className="form-control"
               />
-            </SearchContainer>
+            </SearchContainer> */}
           </LowerHead>
         </HeadContainer>
 
@@ -785,12 +786,16 @@ function Dashboard({
                         >
                           Edit
                         </DropLink>
+                        {/* <DropLink href="#" className="dropdown-item px-4 py-2">
+                          Deactivate
+                        </DropLink> */}
+
                         <DropLink
                           href="#"
                           className="dropdown-item px-4 py-2"
-                          onClick={() => openEditModal(jobDetail.job)}
+                          onClick={() => deleteJobs(jobDetail.job._id)}
                         >
-                          Deactivate
+                          Delete
                         </DropLink>
 
                         {/* <DropBtn

@@ -82,8 +82,6 @@ export const JobCard = styled.div`
     left: 0;
     margin: auto;
 
-    background: linear-gradient(#00e5ff, #b400fb);
-    animation: animate 10s linear infinite;
     overflow: hidden;
 
     @keyframes animate {
@@ -100,7 +98,7 @@ export const JobCard = styled.div`
     content: "";
     position: absolute;
     inset: 5px;
-    background: #29303f;
+    background: rgba(41, 48, 63, 0.18);
     border-radius: 10%;
     overflow: hidden;
     /* background: inherit; */
@@ -144,7 +142,7 @@ export const CompanyInfoHoler = styled.div`
 
 export const JobTitleHolder = styled.div`
   margin: 0.5rem 0;
-  color: #fff;
+  color: black;
 `;
 
 export const JobTitle = styled.h4`
@@ -154,13 +152,13 @@ export const JobTitle = styled.h4`
 
 export const JobType = styled.p`
   font-size: 15px;
-  color: whitesmoke;
+  color: black;
   font-family: "Encode Sans Expanded", sans-serif;
 `;
 
 export const JobDescriptionBox = styled.div`
   width: inherit;
-  color: whitesmoke;
+  color: black;
 `;
 
 export const JobDescription = styled.p`
@@ -182,7 +180,7 @@ export const JobFooter = styled.div`
 
 export const Salary = styled.h5`
   font-weight: bold;
-  color: whitesmoke;
+  color: black;
 `;
 export const Muted = styled.span`
   font-size: 12px;

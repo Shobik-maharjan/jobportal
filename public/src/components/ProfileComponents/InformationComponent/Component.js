@@ -78,7 +78,7 @@ export const TypeDateListing = styled.div`
 export const JobType = styled.div`
   padding: 0.3rem 1rem;
   backdrop-filter: blur(10px);
-  color: black;
+  color: white;
   /* margin: 0.5rem 0; */
   border-radius: 10px;
   text-align: center;

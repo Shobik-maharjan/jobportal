@@ -36,7 +36,7 @@ export const DisabledApplyButton = styled.button`
 
 export const ButtonContainer = styled.div`
   /* margin: 2rem 1rem; */
-  margin: 4rem auto;
+  margin: 2rem auto;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -53,7 +53,7 @@ export const ChatInput = styled.textarea`
   margin-bottom: 0;
   background-color: transparent;
   backdrop-filter: blur(10px);
-  color: white;
+  color: black;
 `;
 
 export const MessageButton = styled.button`

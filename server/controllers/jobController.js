@@ -164,6 +164,47 @@ module.exports.getJob = async (req, res, next) => {
   }
 };
 
+// Save a job for a user
+module.exports.saveJob = async (req, res, next) => {
+  try {
+    const userId = req.user._id; // Authenticated user's ID
+    const jobId = req.params.id; // Job ID from the URL parameter
+
+    console.log(jobId);
+    // Find the user and the job
+    const user = await userModel.findById(userId);
+    const job = await Job.findById(jobId);
+
+    console.log(user);
+
+    if (!user || !job) {
+      return res
+        .status(404)
+        .json({ success: false, message: "User or job not found" });
+    }
+
+    // Check if the job is already saved by the user
+    if (user.savedJobs.some((savedJob) => savedJob.job.toString() === jobId)) {
+      return res
+        .status(400)
+        .json({ success: false, message: "Job is already saved" });
+    }
+
+    // Save the job to the user's savedJobs array
+    user.savedJobs.push({ job: job._id });
+    await user.save();
+
+    return res
+      .status(200)
+      .json({ success: true, message: "Job saved successfully" });
+  } catch (error) {
+    console.error(error);
+    return res
+      .status(500)
+      .json({ success: false, message: "Error saving job" });
+  }
+};
+
 module.exports.applyForJob = async (req, res, next) => {
   try {
     // var appliedJobId = req.body.params.job;
@@ -455,42 +496,9 @@ module.exports.editJob = async (req, res, next) => {
   }
 };
 
-// module.exports.deleteJob = asyncHandler(async (req, res, next) => {
-//   const usr = await req.user._id;
-//   const user = await userModel.findById(usr);
-//   const companies = await CompanyModel.findById(req.params.id);
-//   const job = await JobModel.findById(req.params.id);
-
-//   if (!companies) {
-//     res.status(400).send("Event not found");
-//   } else {
-//     await job.update({
-//       $pull: { jobs: { job: job } },
-//     });
-//     user
-//       .save()
-//       .then((job) => {
-//         return res.status(200).json({
-//           success: true,
-//           data: job,
-//           msg: "The job was deleted successfully",
-//         });
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//         return res.status(400).json({
-//           success: false,
-//           msg: "Error Deleting job",
-//         });
-//       });
-//   }
-// });
-
-// Update job status active deactive
-module.exports.JobStatus = async (req, res) => {
+module.exports.deactiveJob = async (req, res) => {
   try {
-    const { id } = req.params;
-    // const { isActive } = req.body;
+    const { id } = req.paramas;
     const job = await Job.findById(id);
     job.isActive = !job.isActive;
     await job.save();
@@ -499,27 +507,88 @@ module.exports.JobStatus = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
-// module.exports.JobStatus = async (req, res) => {
+
+module.exports.deleteJob = asyncHandler(async (req, res, next) => {
+  try {
+    const jobId = req.params.id;
+
+    // Find the job to be deleted
+    const job = await JobModel.findById(jobId);
+
+    if (!job) {
+      return res.status(400).json({
+        success: false,
+        msg: "Job not found",
+      });
+    }
+
+    // Find the associated user
+    const user = await userModel.findById(req.user._id);
+
+    // Find the associated company
+    const company = await CompanyModel.findById(job.company);
+
+    if (!company) {
+      return res.status(400).json({
+        success: false,
+        msg: "Company not found",
+      });
+    }
+
+    // Remove the job from the appliedJobs of all users
+    await userModel.updateMany(
+      { "appliedJobs.job": job._id }, // Filter for users with the applied job
+      { $pull: { appliedJobs: { job: job._id } } } // Pull the job from appliedJobs array
+    );
+
+    // Remove the job from the company's jobs array
+    company.jobs.pull(jobId);
+    await company.save();
+
+    // Delete the job document
+    await job.remove();
+
+    return res.status(200).json({
+      success: true,
+      msg: "The job was deleted successfully",
+    });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({
+      success: false,
+      msg: "Error deleting job",
+    });
+  }
+});
+
+// exports.module.deleteJobArray = async (req, res) => {
 //   try {
-//     const { id } = req.paramas;
-//     const job = await Job.findById(id);
-//     job.isActive = !job.isActive;
-//     await job.save();
-//     return res.json(job);
-//   } catch (error) {
-//     res.status(500).json({ error: "Internal server error" });
-//   }
-// };
+//     const jobId = req.params.id;
 
-// module.exports.searchJob = async (req, res, next) => {
-//   try {
-//     const term = req.body.term;
+//     // Find the job to be deleted
+//     const job = await JobModel.findById(jobId);
 
-//     const jobs = await Job.find({ title: term });
+//     // Find the associated user
+//     const user = await userModel.findById(req.user._id);
 
-//     return res.json({
-//       success: true,
-//       jobs,
+//     // Remove the job from the user's appliedJobs
+//     const initialAppliedJobsCount = user.appliedJobs.length;
+//     user.appliedJobs = user.appliedJobs.filter(
+//       (appliedJob) => appliedJob.job.toString() !== jobId
+//     );
+//     await user.save();
+
+//     // Log to check if the appliedJobs array is modified
+//     console.log(
+//       `Applied jobs removed: ${
+//         initialAppliedJobsCount - user.appliedJobs.length
+//       }`
+//     );
+//   } catch (err) {
+//     console.error(err);
+//     return res.status(500).json({
+//       success: false,
+//       msg: "Error deleting job",
 //     });
-//   } catch (error) {}
+//   }
 // };

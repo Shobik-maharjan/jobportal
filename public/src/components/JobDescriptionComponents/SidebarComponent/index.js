@@ -10,6 +10,7 @@ import {
   applyForJob,
   checkAlreadyApplied,
   getSavedJobs,
+  saveJob,
 } from "../../../utils/APIRoutes";
 import {
   ApplyButton,
@@ -113,6 +114,30 @@ function Sidebar({ job, isLoading }) {
       });
   };
 
+  const handleSaveJob = () => {
+    // Send a request to your backend API to save the job for the logged-in user
+    const token = JSON.parse(localStorage.getItem("token"));
+    // console.log("Token:", token);
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    const jobId = job._id;
+
+    axios
+      .post(saveJob + `/${jobId}`, {}, config)
+      .then((result) => {
+        toast.success(result.data.message, toastOptions);
+        // console.log(result);
+      })
+      .catch((err) => {
+        toast.error(err.message, toastOptions);
+        // console.log(err);
+      });
+  };
+
   return (
     <SectionWrapper>
       <ButtonContainer>
@@ -139,40 +164,78 @@ function Sidebar({ job, isLoading }) {
               </div>
             </ApplyButton>
           ) : (
-            <div style={{ color: "white" }}>
+            <div style={{ color: "black" }}>
               <DisabledApplyButton
                 primary="true"
                 dark="true"
                 disabled={true}
                 style={{ cursor: "not-allowed" }}
               >
-                <AiOutlineCheckCircle /> Apply For This Job
+                <AiOutlineCheckCircle /> Already applied for this job
               </DisabledApplyButton>
-              You have already applied for this job on:{" "}
               <center>
-                {" "}
-                <b>
-                  {" "}
-                  {Moment(jobData.appliedDate).format("MMM Do YYYY")}{" "}
-                </b>{" "}
+                You have already applied for this job on:
+                <b>{Moment(jobData.appliedDate).format("MMM Do YYYY")}</b>
               </center>
             </div>
           )
         ) : (
           <Skeleton variant="rectangular">
             <ApplyButton to="/applicant/home" primary="true" dark="true">
-              <AiOutlineCheckCircle /> Apply For This Job
+              <AiOutlineCheckCircle /> Apply for this job
             </ApplyButton>
           </Skeleton>
         )}
-        <SaveButton
+      </ButtonContainer>
+
+      <ButtonContainer>
+        {isLoading ? (
+          <Skeleton variant="rectangular">
+            <SaveButton
+              to="/applicant/home"
+              primary="true"
+              dark="true"
+            ></SaveButton>
+          </Skeleton>
+        ) : dataRecived ? (
+          allow ? (
+            <SaveButton
+              to="/applicant/home"
+              primary="true"
+              dark="true"
+              onClick={handleSaveJob}
+            >
+              <AiOutlineCheckCircle /> Save This Job
+            </SaveButton>
+          ) : (
+            <div style={{ color: "black" }}>
+              <DisabledApplyButton
+                primary="true"
+                dark="true"
+                disabled={true}
+                style={{ cursor: "not-allowed" }}
+              >
+                <AiOutlineCheckCircle /> Already saved this Job
+              </DisabledApplyButton>
+              <center>You have already saved for this job</center>
+            </div>
+          )
+        ) : (
+          <Skeleton variant="rectangular">
+            <SaveButton to="/applicant/home" primary="true" dark="true">
+              <AiOutlineCheckCircle /> Save This Job
+            </SaveButton>
+          </Skeleton>
+        )}
+
+        {/* <SaveButton
           to="/applicant/home"
           primary="false"
           dark="true"
           onClick={handleSaveJob}
         >
           <BsBookmark /> Save This Job
-        </SaveButton>
+        </SaveButton> */}
       </ButtonContainer>
 
       {/* <ChatContainer>

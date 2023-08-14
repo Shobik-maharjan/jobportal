@@ -22,9 +22,9 @@ function Navbar({ user, company, loading, jobInfo }) {
     <div className="navBar" style={{ paddingBottom: "0.8rem" }}>
       <div className="navBarContainer">
         <div className="iconsContainer">
-          <MdOutlineLightMode />
-          <BiMessageSquareDetail onClick={() => navigate("/chats")} />
-          <IoNotifications />
+          {/* <MdOutlineLightMode /> */}
+          {/* <BiMessageSquareDetail onClick={() => navigate("/chats")} /> */}
+          {/* <IoNotifications /> */}
         </div>
         <div className="userContainer">
           <div class="dropdown">
