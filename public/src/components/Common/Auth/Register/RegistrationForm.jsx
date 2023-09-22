@@ -438,7 +438,7 @@ class RegistrationForm extends Component {
             background: `url(${background})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            height: "125vh", // Set the height to occupy the full viewport height
+            // height: "125vh", // Set the height to occupy the full viewport height
             display: "flex",
             justifyContent: "center",
             alignItems: "center",

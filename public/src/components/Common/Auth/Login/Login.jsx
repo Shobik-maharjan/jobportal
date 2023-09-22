@@ -10,7 +10,6 @@ import background from "../../../../images/lightBlue.jpg";
 import { loginRoute } from "../../../../utils/APIRoutes";
 import { repeat } from "lodash";
 
-
 export const Login = () => {
   const navigate = useNavigate();
   const cookies = new Cookies();
@@ -103,12 +102,11 @@ export const Login = () => {
           background: `url(${background})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "100vh", // Set the height to occupy the full viewport height
+          // height: "100vh", // Set the height to occupy the full viewport height
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-        }
-      }
+        }}
       >
         <form onSubmit={(event) => handleSubmit(event)}>
           <div className="brand">
@@ -149,12 +147,14 @@ export const Login = () => {
 
 const FormContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
+  padding-top: 7rem;
   align-items: center;
+  padding-bottom: 5rem;
 
   .brand {
     display: flex;

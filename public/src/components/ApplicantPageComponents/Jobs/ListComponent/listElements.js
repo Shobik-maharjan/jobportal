@@ -13,8 +13,8 @@ export const JobCard = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 1rem;
-  max-width: 25%;
-  justify-content: space-between;
+  max-width: 30%;
+  justify-content: inherit;
   transition: box-shadow 0.3s ease-in;
   margin: 1rem;
   position: relative;
@@ -32,9 +32,9 @@ export const JobCard = styled.div`
 
   &:hover {
     transform: scale(1.05);
-    box-shadow: 1px 8px 20px rgba(69, 65, 221, 0.75);
+    // box-shadow: 1px 8px 20px rgba(69, 65, 221, 0.75);
     transition: all 0.1s ease-in-out;
-    backdrop-filter: blur(50px);
+    // backdrop-filter: blur(50px);
   }
 
   &::before {

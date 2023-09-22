@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const Card = styled.div`
   width: 25%;
-  height: 100vh;
+  // height: 100vh;
   background: transparent;
   backdrop-filter: blur(10px);
 `;
 
 export const ProfileContainer = styled.div`
-  padding: 5rem 3rem;
+  padding: 5rem 2rem 2rem;
   display: flex;
   justify-content: space-evenly;
 `;
