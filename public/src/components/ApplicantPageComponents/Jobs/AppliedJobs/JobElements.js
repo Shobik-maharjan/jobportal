@@ -36,7 +36,7 @@ export const TitleHolder = styled.div`
 `;
 
 export const JobCardsHoler = styled.div`
-  width: 85%;
+  width: 100%;
   margin: 1rem auto;
   display: flex;
   flex-wrap: wrap;
@@ -48,7 +48,7 @@ export const JobCard = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 1rem;
-  max-width: 25%;
+  max-width: 22%;
   min-height: 307.5px;
   justify-content: space-between;
   transition: all 0.1s ease-in-out;
@@ -67,9 +67,9 @@ export const JobCard = styled.div`
 
   &:hover {
     transform: scale(1.05);
-    box-shadow: 1px 8px 20px rgba(69, 65, 221, 0.75);
+    // box-shadow: 1px 8px 20px rgba(69, 65, 221, 0.75);
     transition: all 0.1s ease-in-out;
-    backdrop-filter: blur(50px);
+    // backdrop-filter: blur(50px);
   }
 
   &::before {

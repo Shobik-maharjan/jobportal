@@ -147,7 +147,10 @@ function SeekerJobs() {
       updatedList = updatedList.filter(
         (item) =>
           item.title.toLowerCase().search(inputSearch.toLowerCase().trim()) !==
-          -1
+            -1 ||
+          item?.company?.name
+            ?.toLowerCase()
+            .search(inputSearch.toLowerCase().trim()) !== -1
       );
     }
 
