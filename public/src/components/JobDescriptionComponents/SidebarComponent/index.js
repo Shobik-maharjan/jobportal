@@ -57,32 +57,7 @@ function Sidebar({ job, isLoading }) {
     }
   }, [isLoading]);
 
-  const handleSaveJob = () => {
-    // Send a request to your backend API to save the job for the logged-in user
-    const token = JSON.parse(localStorage.getItem("token"));
-    console.log("Token:", token);
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      params: {
-        jobId: job._id,
-        userId: user._id,
-      },
-    };
 
-    axios
-      .get(getSavedJobs, config)
-      .then((result) => {
-        toast.success(result.data.message, toastOptions);
-        // console.log(result);
-      })
-      .catch((err) => {
-        toast.error(err.message, toastOptions);
-        // console.log(err);
-      });
-  };
 
   const handleApply = () => {
     const token = JSON.parse(localStorage.getItem("token"));
