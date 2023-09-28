@@ -40,7 +40,7 @@ export const JobCardsHoler = styled.div`
   margin: 1rem auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 `;
 
@@ -58,7 +58,7 @@ export const JobCard = styled.div`
   overflow: hidden;
   border-radius: 10%;
   backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  // box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.1),
@@ -67,9 +67,9 @@ export const JobCard = styled.div`
 
   &:hover {
     transform: scale(1.05);
-    box-shadow: 1px 8px 20px rgba(69, 65, 221, 0.75);
+    // box-shadow: 1px 8px 20px rgba(69, 65, 221, 0.75);
     transition: all 0.1s ease-in-out;
-    backdrop-filter: blur(50px);
+    // backdrop-filter: blur(50px);
   }
 
   &::before {

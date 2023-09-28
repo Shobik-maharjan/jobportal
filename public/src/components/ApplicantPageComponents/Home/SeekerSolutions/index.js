@@ -26,7 +26,7 @@ function SeekerSolutions() {
   }, []);
   return (
     <SolutionsContainer>
-      <TextContent>
+      {/* <TextContent>
         <Slogan>
           One Platform <br /> Many <ColoredSlogan>Solutions</ColoredSlogan>
         </Slogan>
@@ -78,7 +78,7 @@ function SeekerSolutions() {
             import("./glass")
           )
         )}
-      </CardsContainer>
+      </CardsContainer> */}
     </SolutionsContainer>
   );
 }

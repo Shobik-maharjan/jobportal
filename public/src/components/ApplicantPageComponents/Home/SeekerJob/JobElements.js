@@ -41,7 +41,7 @@ export const JobCardsHoler = styled.div`
   margin: 1rem auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 
   @media screen and (max-width: 768px) {

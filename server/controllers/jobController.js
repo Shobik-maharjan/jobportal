@@ -511,43 +511,39 @@ module.exports.deactiveJob = async (req, res) => {
 module.exports.deleteJob = asyncHandler(async (req, res, next) => {
   try {
     const jobId = req.params.id;
-
     // Find the job to be deleted
     const job = await JobModel.findById(jobId);
-
     if (!job) {
       return res.status(400).json({
         success: false,
         msg: "Job not found",
       });
     }
-
     // Find the associated user
     const user = await userModel.findById(req.user._id);
-
     // Find the associated company
     const company = await CompanyModel.findById(job.company);
-
     if (!company) {
       return res.status(400).json({
         success: false,
         msg: "Company not found",
       });
     }
-
     // Remove the job from the appliedJobs of all users
     await userModel.updateMany(
-      { "appliedJobs.job": job._id }, // Filter for users with the applied job
-      { $pull: { appliedJobs: { job: job._id } } } // Pull the job from appliedJobs array
+      { "appliedJobs.job": job._id, "savedJobs.job": job._id }, // Filter for users with the applied job
+      {
+        $pull: {
+          appliedJobs: { job: job._id },
+          savedJobs: { job: job._id },
+        },
+      } // Pull the job from appliedJobs array
     );
-
     // Remove the job from the company's jobs array
     company.jobs.pull(jobId);
     await company.save();
-
     // Delete the job document
     await job.remove();
-
     return res.status(200).json({
       success: true,
       msg: "The job was deleted successfully",
@@ -560,6 +556,39 @@ module.exports.deleteJob = asyncHandler(async (req, res, next) => {
     });
   }
 });
+
+module.exports.getAllActiveJobs = async (req, res, next) => {
+  try {
+    Job.find({
+      closeDate: {
+        $gte: new Date().toISOString(),
+      },
+    })
+      .populate("company")
+      .populate("sector")
+      .then((result) => {
+        return res.json({
+          success: true,
+          data: result,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+
+        return res.json({
+          success: false,
+          msg: err,
+        });
+      });
+  } catch (error) {
+    console.log(error);
+    return res.json({
+      success: false,
+      error: error,
+      msg: error,
+    });
+  }
+};
 
 // exports.module.deleteJobArray = async (req, res) => {
 //   try {

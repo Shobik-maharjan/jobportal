@@ -1,7 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getAllJobs, host } from "../../../../utils/APIRoutes";
+import {
+  getAllActiveJobs,
+  getAllJobs,
+  host,
+} from "../../../../utils/APIRoutes";
 import { ColoredSlogan, Slogan } from "../SeekerHero/seekerHeroElements";
 import {
   ApplyButton,
@@ -26,7 +30,7 @@ function SeekerJob() {
   var [ready, setIsReady] = useState(false);
   var [jobs, setJobs] = useState([]);
   useEffect(() => {
-    axios.get(getAllJobs).then((result) => {
+    axios.get(getAllActiveJobs).then((result) => {
       jobs = result.data.data;
       setJobs(jobs);
       console.log(jobs);

@@ -1,3 +1,4 @@
+import { Button } from "@material-ui/core";
 import CheckboxComponent from "../CheckboxComponent";
 import { typeList } from "../SearchbarComponent/Constants";
 import SliderComponent from "../SliderComponent";
@@ -25,8 +26,14 @@ function FilterPanel({
   reset,
 }) {
   return (
-    <FilterContainer onDoubleClick={reset}>
-      <InputGroup>
+    <FilterContainer>
+      <Button
+        style={{ color: "white", backgroundColor: "black" }}
+        onClick={reset}
+      >
+        Reset
+      </Button>
+      {/* <InputGroup>
         <Label>Job Type</Label>
         <div style={{ width: "100%" }}>
           <Togglegroup
@@ -35,7 +42,7 @@ function FilterPanel({
             selectToggle={selectToggle}
           />
         </div>
-      </InputGroup>
+      </InputGroup> */}
 
       <InputGroup>
         <Label>Job Categories</Label>

@@ -15,6 +15,7 @@ const {
   deleteJob,
   deactiveJob,
   saveJob,
+  getAllActiveJobs,
 } = require("../controllers/jobController");
 const { protect } = require("../middleware/authMiddleware");
 
@@ -29,6 +30,7 @@ router.get("/getAllJobs", getAllJobs);
 router.get("/getSectorJob", getJobsForSpecificSector);
 router.get("/getJob", getJob);
 router.post("/updateJobStatus", updateJobStatus);
+router.get("/getAllActiveJobs", getAllActiveJobs);
 
 router.route("/savedJobs").get(protect, getSavedJobs);
 router.route("/appliedJobs").get(protect, getAppliedJobs);

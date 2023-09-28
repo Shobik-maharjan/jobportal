@@ -31,6 +31,7 @@ export const getSavedJobs = `${host}/api/job/savedJobs`;
 export const editJob = `${host}/api/job/editJob`;
 export const deleteJob = `${host}/api/job/deleteJob`;
 export const deactiveJob = `${host}/api/job/deactiveJob`;
+export const getAllActiveJobs = `${host}/api/job/getAllActiveJobs`;
 
 export const getCompanyData = `${host}/api/company/getCompanyData`;
 export const getAllCompanies = `${host}/api/company/getCompanies`;

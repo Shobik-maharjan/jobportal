@@ -3,7 +3,7 @@ export const JobCardsHoler = styled.div`
   margin: 1rem auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   @media screen and (max-width: 1000px) {
     justify-content: center;
@@ -165,4 +165,26 @@ export const ApplyButton = styled.button`
     background-color: rgb(0, 0, 0);
     color: white;
   }
+`;
+
+export const Sort = styled.div`
+  width: 100%;
+  padding-left: 25px;
+  display: flex;
+  align-item: center;
+`;
+
+export const Text = styled.div`
+  display: flex;
+  width: 4rem;
+  align-items: center;
+`;
+export const SortButton = styled.button`
+  font-size: 1.2rem;
+  margin: 10px;
+  padding: 9px;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  background-color: black;
 `;
