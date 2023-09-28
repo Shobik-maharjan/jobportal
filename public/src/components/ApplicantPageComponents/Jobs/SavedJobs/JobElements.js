@@ -206,3 +206,21 @@ export const ApplyButton = styled.button`
     /* color: white; */
   }
 `;
+
+export const UnsaveButton = styled.button`
+  padding: 0.2rem 0.7rem;
+  margin: auto;
+  background-color: #ff0000; /* You can use your preferred color */
+  color: #fff;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 1.3px;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    background-color: #ff3333; /* Change color on hover */
+    /* You can also adjust other styles for the hover state */
+  }
+`;

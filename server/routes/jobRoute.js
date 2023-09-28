@@ -14,7 +14,10 @@ const {
   getCompanyJobDetailApp,
   deleteJob,
   deactiveJob,
+  getAllActiveJobs,
   saveJob,
+  unsaveJob,
+  // getNotifications,
 } = require("../controllers/jobController");
 const { protect } = require("../middleware/authMiddleware");
 
@@ -26,6 +29,7 @@ router.get("/getCompanyJobDetail", getCompanyJobDetail);
 router.route("/getCompanyJobDetailApp").get(protect, getCompanyJobDetailApp);
 // router.get("/getCompanyJobDetailApp", getCompanyJobDetailApp);
 router.get("/getAllJobs", getAllJobs);
+router.get("/getAllActiveJobs",getAllActiveJobs)
 router.get("/getSectorJob", getJobsForSpecificSector);
 router.get("/getJob", getJob);
 router.post("/updateJobStatus", updateJobStatus);
@@ -36,8 +40,10 @@ router.route("/appliedJobs").get(protect, getAppliedJobs);
 router.route("/appliedJobsApp").get(protect, getAppliedJobsApp);
 router.route("/applyForJob").post(protect, applyForJob);
 router.route("/saveJob/:id").post(protect, saveJob);
+router.route("/unsaved-jobs/:id").put(protect,unsaveJob)
 router.route("/editJob").put(protect, editJob);
 router.route("/deleteJob/:id").delete(protect, deleteJob);
+// router.route("/notification").get(protect,getNotifications);
 
 // router.route("/deactiveJob").put(protect, deactiveJob);
 

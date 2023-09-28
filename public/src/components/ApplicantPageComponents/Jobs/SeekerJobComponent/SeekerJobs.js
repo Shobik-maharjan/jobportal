@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { getAllJobs } from "../../../../utils/APIRoutes";
+import { getAllActiveJobs } from "../../../../utils/APIRoutes";
 import EmptyView from "../EmptyView/index";
 import FilterPanel from "../FilterPanelComponent";
 import ListComponent from "../ListComponent/index";
@@ -174,7 +174,7 @@ function SeekerJobs() {
     //get all jobs from database
     setLoading(true);
     try {
-      axios.get(getAllJobs).then((res) => {
+      axios.get(getAllActiveJobs).then((res) => {
         setAllJobs(res.data.data);
         setList(res.data.data);
         setLoading(false);

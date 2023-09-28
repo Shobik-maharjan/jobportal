@@ -1,7 +1,7 @@
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { FcBrokenLink } from "react-icons/fc";
-import { getSavedJobs, host } from "../../../../utils/APIRoutes";
+import { getSavedJobs, unsaveJob, host } from "../../../../utils/APIRoutes";
 import {
   ColoredSlogan,
   Slogan,
@@ -21,6 +21,7 @@ import {
   Muted,
   Salary,
   TitleHolder,
+  UnsaveButton,
 } from "./JobElements";
 
 import { Link } from "react-router-dom";
@@ -45,6 +46,41 @@ function SavedJobs() {
     });
   }, []);
 
+  // // Function to handle unsaving a job
+  // const handleUnsaveJob = (jobId) => {
+  //   const unsaveJob = async () => {
+  //     try {
+  //       const token = JSON.parse(localStorage.getItem("token"));
+  //       console.log("Token:",token);
+  //       const config = {
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //           Authorization: `Bearer ${token}`,
+  //         },
+  //       };
+  //       const response = await axios.post(unsaveJob, null, config);
+
+  //       if (response.data.success) {
+  //         // Job was successfully unsaved
+  //         // You can also update the UI to remove the unsaved job from the list
+  //         const updatedSavedJobs = savedJobs.filter(
+  //           (job) => job.job._id !== jobId
+  //         );
+  //         setSavedJobs(updatedSavedJobs);
+  //       } else {
+  //         // Handle error if the job couldn't be unsaved
+  //         console.error("Failed to unsave job:", response.data.msg);
+  //       }
+  //     } catch (error) {
+  //       console.error("Error while unsaving job:", error);
+  //     }
+  //   };
+  //   // Confirm with the user before unsaving the job
+  //   if (window.confirm("Are you sure you want to unsave this job?")) {
+  //     unsaveJob();
+  //   }
+  // };
+
   return (
     <div style={{ minHeight: "100vh" }}>
       <ContentHolder>
@@ -54,7 +90,7 @@ function SavedJobs() {
 
         <JobCardsHoler>
           {ready ? (
-            savedJobs.length != 0 ? (
+            savedJobs.length !== 0 ? (
               savedJobs.map((job) => (
                 <JobCard
                   onClick={(event) =>
@@ -78,7 +114,7 @@ function SavedJobs() {
                       </div>
                     </CompanyInfoHoler>
                     <JobTitleHolder>
-                      <JobTitle>{job?.jo?.title}</JobTitle>
+                      <JobTitle>{job?.job?.title}</JobTitle>
                       <JobType>Full Time</JobType>
                     </JobTitleHolder>
                     <JobDescriptionBox>
@@ -89,7 +125,11 @@ function SavedJobs() {
                         ${job?.job?.salary}
                         <Muted>/month</Muted>
                       </Salary>
-                      {/* <ApplyButton>Status = {job.status} </ApplyButton> */}
+                      {/* <UnsaveButton
+                        onClick={() => handleUnsaveJob(job.job._id)}
+                      >
+                        Unsave
+                      </UnsaveButton> */}
                     </JobFooter>
                   </div>
                 </JobCard>
@@ -146,23 +186,3 @@ function SavedJobs() {
 }
 
 export default SavedJobs;
-
-// const get_function = async () => {
-// const token = await JSON.parse(localStorage.getItem("token"));
-// const config = {
-//   headers: {
-//     "Content-Type": "application/json",
-//     Authorization: `Bearer ${token}`,
-//   },
-// };
-
-//   axios
-//     .get(getSavedJobs, config)
-//     .then((result) => {
-//       setsavedJobs(result.data.savedJobs);
-//       setIsReady(true);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// };

@@ -133,9 +133,7 @@ export const EventsModal = ({
               </div>
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="danger" onClick={setShowModal} size="md">
-                Cancle
-              </Button>
+             
               <Button
                 variant="success"
                 onClick={handleSubmit}
@@ -143,6 +141,9 @@ export const EventsModal = ({
                 type="submit"
               >
                 Create
+              </Button>
+              <Button variant="danger" onClick={setShowModal} size="md">
+                Cancel
               </Button>
             </Modal.Footer>
           </form>

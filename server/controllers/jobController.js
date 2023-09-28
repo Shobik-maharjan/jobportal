@@ -7,6 +7,7 @@ const util = require("util");
 const asyncHandler = require("express-async-handler");
 const JobModel = require("../model/JobModel");
 const CompanyModel = require("../model/CompanyModel");
+const Notification = require("../model/notificationModel");
 
 module.exports.addJob = async (req, res, next) => {
   try {
@@ -65,11 +66,51 @@ module.exports.addJob = async (req, res, next) => {
           msg: "Failed to add job",
         });
       });
+
+    // Send notifications to applicants
+    const applicants = await userModel.find({ role: "applicant" }); // Assuming you have a "role" field to distinguish applicants
+
+    const notificationPromises = applicants.map(async (applicant) => {
+      const notification = new Notification({
+        recipient: applicant._id,
+        message: `New job "${job.title}" has been added by ${company.name}.`,
+      });
+      await notification.save();
+    });
+
+    await Promise.all(notificationPromises);
+
+    return res.json({
+      success: true,
+      data: result,
+      msg: "The Job was added successfully",
+    });
   } catch (error) {
     return res.json({
       success: false,
       error: error,
       msg: "Something went wrong",
+    });
+  }
+};
+
+module.exports.getNotifications = async (req, res, next) => {
+  try {
+    const userId = req.user._id; // Authenticated user's ID
+
+    const notifications = await Notification.find({ recipient: userId })
+      .sort({ createdAt: -1 }) // Sort by most recent first
+      .populate("recipient", "username"); // Populate recipient field with username
+
+    return res.json({
+      success: true,
+      data: notifications,
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      success: false,
+      message: "Error fetching notifications",
     });
   }
 };
@@ -202,6 +243,49 @@ module.exports.saveJob = async (req, res, next) => {
     return res
       .status(500)
       .json({ success: false, message: "Error saving job" });
+  }
+};
+module.exports.unsaveJob = async (req, res, next) => {
+  try {
+    const userId = req.user._id; // Authenticated user's ID
+    const jobId = req.params.id; // Job ID from the URL parameter
+
+    // Find the user
+    const user = await userModel.findById(userId);
+
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    // Check if the job is saved by the user
+    const savedJobIndex = user.savedJobs.findIndex(
+      (savedJob) => savedJob.job.toString() === jobId
+    );
+
+    if (savedJobIndex === -1) {
+      return res.status(400).json({
+        success: false,
+        message: "Job is not saved by the user",
+      });
+    }
+
+    // Remove the job from the user's savedJobs array
+    user.savedJobs.splice(savedJobIndex, 1);
+    await user.save();
+
+    return res.status(200).json({
+      success: true,
+      message: "Job unsaved successfully",
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      success: false,
+      message: "Error unsaving job",
+    });
   }
 };
 
@@ -412,6 +496,7 @@ module.exports.getAppliedJobs = asyncHandler(async (req, res, next) => {
     res.status(200).send(jobs);
   }
 });
+
 module.exports.getSavedJobs = asyncHandler(async (req, res, next) => {
   const usr = await req.user._id;
   var jobs = await userModel
@@ -560,35 +645,35 @@ module.exports.deleteJob = asyncHandler(async (req, res, next) => {
     });
   }
 });
+module.exports.getAllActiveJobs = async (req, res, next) => {
+  try {
+    Job.find({
+      closeDate: {
+        $gte: new Date().toISOString(),
+      },
+    })
+      .populate("company")
+      .populate("sector")
+      .then((result) => {
+        return res.json({
+          success: true,
+          data: result,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
 
-// exports.module.deleteJobArray = async (req, res) => {
-//   try {
-//     const jobId = req.params.id;
-
-//     // Find the job to be deleted
-//     const job = await JobModel.findById(jobId);
-
-//     // Find the associated user
-//     const user = await userModel.findById(req.user._id);
-
-//     // Remove the job from the user's appliedJobs
-//     const initialAppliedJobsCount = user.appliedJobs.length;
-//     user.appliedJobs = user.appliedJobs.filter(
-//       (appliedJob) => appliedJob.job.toString() !== jobId
-//     );
-//     await user.save();
-
-//     // Log to check if the appliedJobs array is modified
-//     console.log(
-//       `Applied jobs removed: ${
-//         initialAppliedJobsCount - user.appliedJobs.length
-//       }`
-//     );
-//   } catch (err) {
-//     console.error(err);
-//     return res.status(500).json({
-//       success: false,
-//       msg: "Error deleting job",
-//     });
-//   }
-// };
+        return res.json({
+          success: false,
+          msg: err,
+        });
+      });
+  } catch (error) {
+    console.log(error);
+    return res.json({
+      success: false,
+      error: error,
+      msg: error,
+    });
+  }
+};

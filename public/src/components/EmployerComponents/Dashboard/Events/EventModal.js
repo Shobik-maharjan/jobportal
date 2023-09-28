@@ -62,7 +62,20 @@ export const EventsModal = ({
                     },
                   }}
                 />
-
+                <TextField
+                  required
+                  id="outlined-multiline-flexible1"
+                  label="Note"
+                  name="note"
+                  multiline
+                  minRows={6}
+                  style={{ width: "100%" }}
+                  value={event.note}
+                  onChange={handleEventInput}
+                  InputLabelProps={{
+                    style: { color: "#fff", borderColor: "#fff" },
+                  }}
+                />
                 <div>
                   <h4
                     style={{ marginBottom: 0, color: "#ccc" }}
@@ -119,9 +132,6 @@ export const EventsModal = ({
               </div>
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="danger" onClick={closeModel} size="md">
-                Cancle
-              </Button>
               <Button
                 variant="success"
                 onClick={handleSubmit}
@@ -129,6 +139,9 @@ export const EventsModal = ({
                 type="submit"
               >
                 Create
+              </Button>
+              <Button variant="danger" onClick={closeModel} size="md">
+                Cancel
               </Button>
             </Modal.Footer>
           </form>

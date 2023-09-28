@@ -30,7 +30,7 @@ const HeroSection = () => {
         </HeroP>
         <HeroBtnWrapper>
           <Button
-            to="#services"
+            to="auth/login"
             onMouseEnter={onHover}
             onMouseLeave={onHover}
             primary="true"

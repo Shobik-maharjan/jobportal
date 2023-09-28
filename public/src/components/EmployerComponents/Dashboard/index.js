@@ -74,7 +74,7 @@ function Dashboard({
 
   const [event, setEvent] = useState({
     title: "",
-    note: "Lorem Epsum",
+    note: "",
     date: new Date(),
     startTime: "9:00",
     endTime: "10:00",
@@ -247,7 +247,7 @@ function Dashboard({
           closeEventModel();
           setEvent({
             title: "",
-            note: "Lorem Epsum",
+            note: "",
             date: new Date(),
             startTime: "9:00",
             endTime: "10:00",
@@ -350,7 +350,7 @@ function Dashboard({
 
   const [todo, setTodo] = useState({
     title: "",
-    note: "Lorem Epsum",
+    note: "",
   });
 
   const handleTodoSubmit = async (e) => {
@@ -381,7 +381,7 @@ function Dashboard({
           getTodos();
           setTodo({
             title: "",
-            note: "Lorem Epsum",
+            note: "",
           });
           toast.success("Todo was added successfully", toastOptions);
         } else {
